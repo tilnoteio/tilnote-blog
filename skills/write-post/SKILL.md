@@ -1,6 +1,6 @@
 ---
 name: write-post
-description: Writes a blog post with the user and publishes it on their Tilnote blog - checks for an earlier post on the topic and their writing memo, looks the topic up (or first asks a few questions when it is their own view or a story they lived), saves a private draft, shows it with a short summary and explanation, works in what they add (their experience, views, questions) and publishes only when they say so. Keeps unfinished work in a private idea note. Use whenever the user wants a blog post, article or TIL to publish, even without naming Tilnote - "write a blog post about X", "turn this conversation into a post", "continue my X idea", "let's write about news item 2", "블로그 써줘", "○○ 알아보고 글 쓰고 싶어", "이거 글로 정리해서 올려줘", "오늘 배운 거 TIL로 올려줘", "어제 그 글 아이디어 이어서", "뉴스 2번으로 글 쓰자". Not for a plain question ("○○ 뭐야?"), notes for themselves, a post for another site or platform (WordPress, Medium, a project file), emails or reports, improving an existing post (upgrade-post), social posts (share-post), or news topics (news-reader).
+description: Writes a blog post with the user and publishes it on their Tilnote blog - checks for an earlier post on the topic and their writing memo, looks the topic up (or first asks a few questions when it is their own view or a story they lived), saves a private draft, shows it with a short summary and explanation, works in what they add (their experience, views, questions) and publishes only when they say so. Keeps unfinished work in a private idea note. Use when the user wants a blog post, article or TIL for their blog and names no other platform - "write a blog post about X", "turn this conversation into a post", "continue my X idea", "let's write about news item 2", "블로그 써줘", "○○ 알아보고 글 쓰고 싶어", "이거 글로 정리해서 올려줘", "오늘 배운 거 TIL로 올려줘", "어제 그 글 아이디어 이어서", "뉴스 2번으로 글 쓰자". Not for a plain question ("○○ 뭐야?"), notes for themselves, a post for another site or platform (WordPress, Medium, a project file), emails or reports, improving an existing post (upgrade-post), social posts (share-post), or news topics (news-reader).
 ---
 
 # Write a post together (함께 쓰기)
@@ -51,9 +51,9 @@ about it.
    where they asked. When the Tilnote tools aren't there:
    - **The request is about something only Tilnote has** - publishing a draft they
      already have, going on with an idea note or a draft, their published posts → say
-     in one line that Tilnote isn't connected yet and where to connect it (the app's
-     connection settings, `/mcp` in a terminal app, address `https://tilnote.io/mcp`),
-     and stop.
+     in one line that Tilnote isn't connected yet and where to connect it (only the
+     place in the app you are in - the app's connection settings, `/mcp` in a terminal app, Plugins → Tilnote Blog in ChatGPT
+     or the Codex app, address `https://tilnote.io/mcp`), and stop.
    - **Anything else** ("로컬 LLM에 대해 블로그 글 써줘", and "이거 글로 정리해서
      올려줘" too - the post can be written, only the publishing waits) → write the
      post in the chat, as they asked. Leave out only what needs Tilnote - the memo (write in the default

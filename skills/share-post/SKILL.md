@@ -32,8 +32,9 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
      > Connect Tilnote (`https://tilnote.io/mcp`) and Tilnote will count the lengths for you, and make share links that open with your text filled in and links that show where readers came from.
    - **Otherwise** - a post they name by title or time ("어제 올린 글"), or a private
      one to publish first → say in one line that Tilnote isn't connected yet and where
-     to connect it (the app's connection settings, `/mcp` in a terminal app, address
-     `https://tilnote.io/mcp`), and stop.
+     to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a terminal app, Plugins →
+     Tilnote Blog in ChatGPT or the Codex app, address `https://tilnote.io/mcp`), and
+     stop.
 2. The post is the one just published in this conversation (its `pageId`), or the one
    they name - `search_notes` with their words and `published: true`; a single match
    is enough. For "어제 올린", "방금" and other time words, `list_notes` with

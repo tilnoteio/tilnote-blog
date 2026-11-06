@@ -17,11 +17,12 @@ Titles of books, chapters and notes go in double quotes ("Git, 명령어 너머"
 ## 1. Connection
 
 Check that the Tilnote tools are there. If not, the plugin is installed but Tilnote
-isn't signed in yet. Say so in one line and tell them where to sign in: where their
-app manages connections - in a terminal app usually `/mcp`, in a chat app the
-plugin's connector settings - with the address `https://tilnote.io/mcp`. Then show the
-overview (section 3) without the account line and without a recommended step, so they
-know what they get once signed in, and stop.
+isn't signed in yet. Say so in one line and tell them where to sign in - only the place in the
+app you are running in: where their app manages connections - in a terminal app usually `/mcp`, in a chat app the
+plugin's connector settings (in ChatGPT or the Codex app: Plugins → Tilnote Blog) -
+with the address `https://tilnote.io/mcp`. Then show the overview (section 3) without
+the account line and without a recommended step, so they know what they get once
+signed in, and stop.
 
 ## 2. Look (read-only, one round)
 

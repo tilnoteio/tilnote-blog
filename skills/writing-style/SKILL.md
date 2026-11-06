@@ -58,8 +58,9 @@ Check first that the Tilnote tools are there. If not:
   > Connect Tilnote (`https://tilnote.io/mcp`) and I'll save this rule in your 'My writing style' memo, so other AI apps with this plugin follow it too.
 - **Anything that needs their notes** - learning from their published posts, "내 문체
   메모 보여줘", changing or deleting the memo → say in one line that Tilnote isn't
-  connected yet and where to connect it (the app's connection settings, `/mcp` in a
-  terminal app, address `https://tilnote.io/mcp`), and stop.
+  connected yet and where to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a
+  terminal app, Plugins → Tilnote Blog in ChatGPT or the Codex app, address
+  `https://tilnote.io/mcp`), and stop.
 
 ## Learning from their posts ("내 문체 기억해줘")
 

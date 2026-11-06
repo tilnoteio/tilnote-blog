@@ -75,8 +75,9 @@ line - `Running example:` in a note with English labels).
      Changes they ask for are made to the draft in the chat; don't repeat the line.
    - **Anything else** - their books, a chapter, a change to a book, making the book
      from a draft, "이 노트들로 책 만들어줘" → say in one line that Tilnote isn't
-     connected yet and where to connect it (the app's connection settings, `/mcp` in a
-     terminal app, address `https://tilnote.io/mcp`), and stop.
+     connected yet and where to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a
+     terminal app, Plugins → Tilnote Blog in ChatGPT or the Codex app, address
+     `https://tilnote.io/mcp`), and stop.
 2. Pick the part of this skill that fits:
 
 | The user says | Go to |

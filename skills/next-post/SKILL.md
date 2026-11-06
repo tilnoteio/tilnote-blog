@@ -18,8 +18,9 @@ the fixed lines have an English form next to them.
 1. Check that the Tilnote tools are there. If not:
    - **Their own posts** - how they are doing, which to fix ("내 글 조회수 어때",
      "반응 좋은 글 뭐야", "블로그 점검해줘") → say in one line that Tilnote isn't
-     connected yet and where to connect it (the app's connection settings, `/mcp` in a
-     terminal app, address `https://tilnote.io/mcp`), and stop.
+     connected yet and where to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a
+     terminal app, Plugins → Tilnote Blog in ChatGPT or the Codex app, address
+     `https://tilnote.io/mcp`), and stop.
    - **A topic question** ("블로그 주제 뭐가 좋을까", "다음에 뭐 쓰지") → answer it
      normally: a few ideas from what the conversation shows about them and what they
      write about - no claims about their posts, notes or numbers. End with one line:

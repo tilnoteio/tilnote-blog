@@ -14,7 +14,7 @@ Everything stays in your Tilnote account - idea notes, drafts, posts, share text
 writing memo, your news topics and past briefings, your books - so you can pick up in any AI app
 where you use this plugin, right where you stopped.
 
-한국어 안내: [README.ko.md](README.ko.md)
+한국어 안내: [README.ko.md](https://github.com/tilnoteio/tilnote-blog/blob/main/README.ko.md)
 
 ## Skills
 
@@ -137,7 +137,8 @@ keep it casual"), or, if you have posts you wrote yourself, say "Remember my wri
 style" to learn it from them. Try the news reader ("Set up my news topics") and books
 ("Make me a book on <topic>") on their own.
 
-Everything works in Korean too - the Korean guide is [README.ko.md](README.ko.md).
+Everything works in Korean too - the Korean guide is
+[README.ko.md](https://github.com/tilnoteio/tilnote-blog/blob/main/README.ko.md).
 
 ## What it connects to
 
@@ -150,7 +151,10 @@ the AI makes a one-hour upload link on tilnote.io (`https://tilnote.io/en/upload
 signing in, so don't pass it on. In Claude Code, or another app that can run shell
 commands, you can instead point the AI at picture files on your computer: it uploads
 just those files with `curl` to `https://server.tilnote.io/api/image-upload-links/images`,
-using that link's one-hour token. Nothing else is sent anywhere.
+using that link's one-hour token. The plugin itself sends nothing else: web searches
+are your AI app's own (see Privacy), and what Tilnote does with what it receives -
+including the spam check new accounts' posts go through - is in Tilnote's privacy
+policy.
 
 ## Privacy
 

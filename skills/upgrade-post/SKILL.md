@@ -36,8 +36,8 @@ meant to be said word for word have their English form next to them.
      > Connect Tilnote (address `https://tilnote.io/mcp`) and I can save this as a note and post it to your blog when you say so.
    - **The request needs Tilnote** - a note, publishing, a published post, an earlier
      version → say in one line that Tilnote isn't connected yet and where to connect it
-     (the app's connection settings, `/mcp` in a terminal app, address
-     `https://tilnote.io/mcp`), and stop.
+     (only the place in the app you are in - the app's connection settings, `/mcp` in a terminal app, Plugins → Tilnote Blog
+     in ChatGPT or the Codex app, address `https://tilnote.io/mcp`), and stop.
 3. If you will change or publish the text (not to take it down, delete it or restore a
    version), `search_notes` with `q: "tilnote-style"` and `tags: ["tilnote-style"]`
    for their private `내 문체 메모` note (if none comes back, check once more with
