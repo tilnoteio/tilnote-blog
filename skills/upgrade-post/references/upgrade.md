@@ -21,31 +21,35 @@ a number from memory or from a search snippet you didn't open.
 - Still true → leave the sentence as it is. Adding "2026년 11월 기준" to a fact you
   didn't change is fake freshness.
 - Changed → correct it in place, in the post's own endings, with the date and its
-  source: `현재 최신 버전은 Next.js ○○이다(2026년 11월 기준).[^1]`
+  source: `현재 최신 버전은 Next.js ○○이다(2026년 11월 기준).[^1]` (in English:
+  `The latest version is Next.js ○○ (as of November 2026).[^1]`)
 - Gone (a product ended, a feature was removed, a free tier closed) → say so in that
-  sentence ("2026년 9월에 서비스가 끝났다"). Don't quietly delete the section - a
-  reader who searched for it should learn it is gone.
+  sentence ("2026년 9월에 서비스가 끝났다", "It shut down in September 2026."). Don't
+  quietly delete the section - a reader who searched for it should learn it is gone.
 
 **The writer's own results stay.** A measurement, a screenshot, a verdict - those are
 what they saw then. If the product changed so much that the result may not hold, add
-one dated sentence after it ("2026년 11월 버전에서는 다를 수 있어요") and leave
-theirs untouched.
+one dated sentence after it ("2026년 11월 버전에서는 다를 수 있어요", "This may differ
+in the November 2026 version.") and leave theirs untouched.
 
 **Can't search** → change nothing in this area. In what you report, list the facts you
 could not check, and offer one line near the top instead: "이 글의 요금과 버전은 2025년 2월
-기준이에요."
+기준이에요." ("Prices and versions in this post are as of February 2025.")
 
 ## Marking what changed
 
-- Next to each corrected fact: "(2026년 11월 기준)" - the month you checked.
+- Next to each corrected fact: "(2026년 11월 기준)" ("(as of November 2026)" in an
+  English post) - the month you checked.
 - When at least one fact changed, one line at the very top, in the post's voice:
 
   ```markdown
   > 2026년 11월 업데이트: 버전과 설치 명령을 지금 기준으로 고쳤다.
   ```
 
-  One line, not a changelog. A later upgrade replaces it with the newer month and what
-  changed then.
+  In an English post: `> Updated November 2026: <what changed>.`
+
+  One line, not a changelog. A later upgrade finds that line, in either language, and
+  replaces it with the newer month and what changed then - never a second one.
 - Nothing factual changed (wording, links, summary, cover) → no update line.
 - Tilnote keeps the original publish date; don't write the post as if it were new.
 
@@ -55,8 +59,8 @@ The post's existing links stay as they are. A source for a fact you corrected:
 
 - The post has `## 참고` (or `## References`) footnotes → the next unused number, which `get_note` prints
   (`Footnotes: highest [^2], next free [^3]`); in the same `edit_note` as the
-  sentence, its line `append`ed with that section (`section: "참고"`). Don't renumber
-  the others.
+  sentence, its line `append`ed with that section (`section: "참고"`, or
+  `"References"`). Don't renumber the others.
 - It has none → start them for what you added: `[^1]` right after the sentence, after
   the period, and a `## 참고` section (`## References` in an English post) at the very
   end (`append` with no `section`,
@@ -83,7 +87,7 @@ that sentence better (a number, a date, a source) instead of adding a second one
 | Their view | Where the post draws its conclusion - or the opening, if it is the point |
 | An answer to a reader's question | Where the question would come up while reading - but not inside a section that is the writer's own account (「써 보니」, 「후기」); next to it instead. A short FAQ only from questions the user asked, before `## 참고` |
 | A new subtopic from a source | Its own section next to the one it relates to, before `## 참고` - only when it is more than a sentence or two |
-| A follow-up post's link | Near the top: "이후 바뀐 내용은 [○○](...)에 정리했다." |
+| A follow-up post's link | Near the top: "이후 바뀐 내용은 [○○](...)에 정리했다." (English: "What's changed since is covered in [○○](...).") |
 
 **A source they bring**, set against the post:
 
@@ -91,14 +95,16 @@ that sentence better (a number, a date, a source) instead of adding a second one
 - New → in, where the table says, cited.
 - Contradicts the post → the newer primary source wins. When the change itself is
   worth knowing (a free tier that closed, a default that flipped), keep what was true
-  then: "처음엔 무료였는데 2026년 9월부터 유료다." Otherwise - or when the post was
-  already wrong the day it went up - just correct it.
+  then: "처음엔 무료였는데 2026년 9월부터 유료다." ("It was free at first, but since
+  September 2026 it costs money.") Otherwise - or when the post was already wrong the
+  day it went up - just correct it.
 - The source itself is out of date (it says 15 is out; 16 is out now) → check it like
   any other, use the newest primary source, and tell the user in a line.
 - A news article that cites a primary source → open the primary source and cite that.
 - Nothing you can open backs it (a lecture, a book, an internal document) → it goes
   in on the user's word, with its origin in the sentence: "○○ 밋업 발표에 따르면 …",
-  "『○○』에서는 …". No footnote, since there is no page you opened.
+  "『○○』에서는 …" ("According to the ○○ meetup talk, …", "In *○○*, …"). No
+  footnote, since there is no page you opened.
 - Someone else's text → retold in the writer's voice. Two of its sentences in a row
   copied as they are is too much; a short quote in quotation marks, with its origin,
   is the most.
@@ -154,7 +160,8 @@ post now covers.
 
 - From this post to the writer's related **published** posts: a later follow-up on the
   same topic is the most useful, near the top - "이후 바뀐 내용은 [○○](...)에 정리했다."
-  Then one or two posts that go deeper on a step this one skims.
+  ("What's changed since is covered in [○○](...).") Then one or two posts that go
+  deeper on a step this one skims.
 - Public addresses only: the `publicUrl` that `search_notes` / `get_note` return
   (`https://tilnote.io/pages/<pageId>`); skip a post whose `publicUrl` is null - a paid
   book's chapter has no page of its own. Never the `url` they also return,

@@ -29,8 +29,9 @@ the same turn, before you reply:
   `find: "(아직 없음)"` and the `section`. Use `append_to_note` only for a section
   the note doesn't have yet.
 - Their words, as they said them - fix only spelling. Nothing they didn't say.
-- Update "어디까지 했나" in one line ("직접 돌려 봄. 글로 쓰기 전"). When they stop
-  again, it says where ("나중에 쓰기로 함").
+- Update "어디까지 했나" in one line ("직접 돌려 봄. 글로 쓰기 전"; in English "Ran it
+  myself. Not written up yet."). When they stop again, it says where ("나중에 쓰기로
+  함", "Will write it up later").
 
 ## Title and shape
 
@@ -109,14 +110,16 @@ note instead of making a second one.
 
 ## Resuming
 
-When the user says "○○ 글 아이디어 이어서", "그거 해 봤어":
+When the user says "○○ 글 아이디어 이어서", "그거 해 봤어" ("continue my <topic> idea",
+"I tried it") - or picks a news item that already has an idea note ("let's write about
+news item 2"; find that note as in "From a news briefing item"):
 
 1. `search_notes` with `q` the topic words and `tags: ["tilnote-idea"]`; pick the idea
    note on that topic. If there are several, ask which one. With no topic words ("어제
-   그 글 아이디어 이어서", "그거 해 봤어" in a new conversation), `list_notes` with
-   `tag: "tilnote-idea"`, `sort: "updated"` and `limit: 5`: take the newest, or the one
-   edited on the day they name, and name it when you greet them (step 4). If two are
-   equally likely, list their titles and ask.
+   그 글 아이디어 이어서", "그거 해 봤어", "I tried it" in a new conversation),
+   `list_notes` with `tag: "tilnote-idea"`, `sort: "updated"` and `limit: 5`: take the
+   newest, or the one edited on the day they name, and name it when you greet them
+   (step 4). If two are equally likely, list their titles and ask.
 2. `get_note` it and read "어디까지 했나".
 3. If their message brings something new ("해 봤는데 한 문장에 10초쯤 걸리더라"),
    write it into the note now, as in "Keeping it up to date".

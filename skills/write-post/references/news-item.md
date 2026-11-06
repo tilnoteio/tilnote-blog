@@ -2,7 +2,8 @@
 
 The user's news briefing is recent news on topics they keep in Tilnote, researched
 when they ran it: numbered items, each with a title, a link, the source and date,
-무슨 일 (what happened), 왜 볼 만한지 and a 글 아이디어 question. It is either earlier in this
+무슨 일 (what happened), 왜 볼 만한지 and a 글 아이디어 question (`What happened:`, `Why
+it's worth a look:`, `Post idea:` in an English briefing). It is either earlier in this
 conversation or saved as a private note tagged `tilnote-news` and titled
 `[뉴스] YYYY-MM-DD 브리핑` (or the same in the user's language). When they want to write
 from one:
@@ -14,9 +15,9 @@ from one:
    yesterday, going back up to 7 days. Take the note whose title carries that date and
    `get_note` it. If there is none, ask what about the
    news caught their eye, or start from the topic itself.
-2. Find the item. "3번" is the item numbered 3. If a day's note holds more than one
-   run (a `## HH:mm 추가` / `## HH:mm update` section) and the number fits both, or
-   their words fit more than one item, list the titles numbered and ask which.
+2. Find the item. "3번" ("item 3") is the item numbered 3. If a day's note holds more
+   than one run (a `## HH:mm 추가` / `## HH:mm update` section) and the number fits
+   both, or their words fit more than one item, list the titles numbered and ask which.
 3. Look for an idea note they already saved for this item - before starting fresh:
    `search_notes` with `q` the item's title and `tags: ["tilnote-idea"]`, and if nothing
    comes back, with two or three key words of the title (same `tags`); take the idea
@@ -37,7 +38,8 @@ from one:
    sources, and neither answers it for them nor uses it as a heading ("우리 팀…" would
    read as their own). When you show the draft, the line that keeps the conversation
    open can name it: "…'<글 아이디어 질문>'에 대한 경험이나 생각을 말씀해 주시면 글에
-   넣을게요."
+   넣을게요." ("…tell me what you've seen or think about '<post idea question>' and
+   I'll work it in.")
    If they asked to understand it first, explain instead
    ([explain.md](explain.md)) and offer the 글 아이디어 question as one of the example
    questions.

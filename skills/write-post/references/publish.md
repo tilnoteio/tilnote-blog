@@ -9,10 +9,11 @@ that went out with a stale price in it is not.
 1. **Facts that move.** If you can search, re-check the time-sensitive facts in the
    post: prices, version numbers, limits, release status, dates, "지금은 무료" claims.
    This matters most when the draft was written on another day (an idea note) or from
-   memory. Fix what changed, keep the "2026년 10월 기준" style date next to it, and
-   tell the user in one line what you corrected. If you can't search, say which facts
-   are "as of" when, rather than presenting them as current. Never change the user's
-   own results - their "한 문장에 10초" is a measurement, not a fact to update.
+   memory. Fix what changed, keep the "2026년 10월 기준" ("as of October 2026") style
+   date next to it, and tell the user in one line what you corrected. If you can't
+   search, say which facts are "as of" when, rather than presenting them as current.
+   Never change the user's own results - their "한 문장에 10초" is a measurement, not
+   a fact to update.
 2. **Title** is what someone would type into a search box, with the search term near
    the front. See [seo.md](seo.md).
 3. **Opening** answers the title's question in the first two or three sentences.
@@ -37,8 +38,9 @@ that went out with a stale price in it is not.
    `[^1][^2]`. Something the user added in the editor may have broken this.
 
 Then, unless the request itself already counts as the yes ("5. Publish" in the skill:
-they asked to publish - "올려줘" - a draft they have seen, or a post built on their own
-part of this conversation), ask once, plainly: "이대로 공개할까요?" A clear yes publishes.
+they asked to publish - "올려줘", "publish it" - a draft they have seen, or a post
+built on their own part of this conversation), ask once, plainly: "이대로
+공개할까요?" ("Publish it like this?") A clear yes publishes.
 Anything else - a change, a question, silence - doesn't.
 
 ## Publishing
@@ -49,17 +51,23 @@ Anything else - a change, a question, silence - doesn't.
 - `summary` - the one on the note (check 4), `tags`
 - `thumbnailUrl`: the cover image you drew on the yes - see [cover.md](cover.md). Leave
   it out when the note already has a cover or the post has a photo of the user's own
-- `aiGenerated: true` (you drafted it; the mark can't be removed later, which is fine
-  because it is true)
+- `aiGenerated: true` when you drafted or substantially wrote the body (saved by
+  `create_note` in this flow, or `get_note` shows `AI-generated: yes`); the mark can't
+  be removed later, which is fine because it is true. A draft the user wrote
+  themselves goes out without it
 - `content` only if the body changed since saving
 
-Report the returned URL, one share line, and one offer - nothing more. Write the
+Report the returned URL, one share line, and one offer - nothing more. When you wrote
+the summary at check 4, say so in a few words in the link line. Write the
 share line in the post's own voice (its endings, not the example's); it goes out
 under the user's name:
 
 > 올렸어요: https://tilnote.io/pages/... (대표 이미지도 만들어 넣었어요)
 > 공유용 한 줄: "맥북 에어 8GB로 로컬 LLM 돌려 봤더니, 느리지만 문서 요약엔 쓸 만했어요."
 > 스레드·링크드인 같은 SNS용 문구도 만들어 드릴까요?
+
+In English: "Published: https://tilnote.io/pages/... (I drew a cover image for it
+too.)", "A line to share it: ...", "Want versions for Threads, X or LinkedIn too?"
 
 If the user says yes, the share-post skill takes it from there (a version per network,
 a tracked link and a share window for each).
@@ -70,7 +78,7 @@ a tracked link and a share window for each).
 |---|---|
 | insufficient permissions / `mcp:publish` | The connection was approved without publishing. The user has to reconnect Tilnote and allow publishing; retrying won't help |
 | content too short | Below the server minimum. Keep it private. Don't pad |
-| daily limit | Shared with posts made on tilnote.io. Keep it private; it can go out after the reset the error names (00:00 Korea time = 15:00 UTC) |
+| daily limit | Shared with posts made on tilnote.io. Keep it private; it can go out after the reset the error names (00:00 Korea time = 15:00 UTC). Give the reset in the user's own time zone: 00:00 for a Korean user, e.g. 16:00 in Berlin in winter, UTC if you don't know theirs |
 | did not pass the publish check | Tilnote's spam check stopped it. Say so plainly: a draft stays private, but a post that was already live (a republish for summary, tags or cover) is now off the blog - say that too. Don't reword to get past it, and don't try again without their OK |
 | wiki or clip page | Those pages can't be published |
 
@@ -94,8 +102,8 @@ published post changes live at once:
   again and never a block id. The fix is live at once - no need to publish again. Apply
   straight away only what the user spelled out (a typo, a sentence they gave); for new
   wording of your own, `preview_note_edit` the operations first, show what will change
-  and where, ask "이대로 반영할까요?", and on a yes send the same arguments to
-  `edit_note` (no `confirm` or `save` field).
+  and where, ask "이대로 반영할까요?" ("Shall I apply these?"), and on a yes send the
+  same arguments to `edit_note` (no `confirm` or `save` field).
 - Title change → `edit_note` with `title` (and `operations: []` when nothing else
   changes), or in the same call as body fixes.
 - New summary, tags or cover → `publish_note` again with the same `pageId` and only

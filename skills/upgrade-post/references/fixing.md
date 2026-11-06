@@ -20,9 +20,10 @@ is. Pick by what the user can get back afterwards.
 - Because readers see it at once: apply straight away only what the user spelled out
   (typos, spacing, a sentence or a title they gave you). When the fix means rewording
   of your own ("이 문단 다듬어줘"), first `preview_note_edit` the arguments you would
-  send, show what will change and where in a few lines, ask "이대로 반영할까요?", and
-  on a clear yes send the same arguments to `edit_note`. There is no `confirm` or
-  `save` field: the preview was the dry run, and `edit_note` always saves.
+  send, show what will change and where in a few lines, ask "이대로 반영할까요?"
+  ("Shall I apply these?"), and on a clear yes send the same arguments to
+  `edit_note`. There is no `confirm` or `save` field: the preview was the dry run,
+  and `edit_note` always saves.
   "최신 내용으로 고쳐줘" is the upgrade - what you found comes first, as in SKILL.md.
 - Report what changed in the user's words ("4번째 문단 오타 2곳, 「설치 방법」 절 마지막
   문장 바꿈"), not the text again - never a block id like `B7.k3f9x`. The result names
@@ -68,6 +69,7 @@ trash can. Use it only when the user asks for the note to be gone - "완전히 �
 "삭제해줘", "흔적도 없이" - not for "내려줘".
 
 1. Name the note and confirm: "'○○' 노트를 완전히 지울까요? 되돌릴 수 없어요."
+   ("Delete the note '○○' for good? It can't be undone.")
 2. On a clear yes, `delete_note` with `confirm: true`.
 
 If the request is ambiguous ("그거 없애줘"), unpublish, then say the note is kept and
@@ -93,8 +95,9 @@ can be deleted if that is what they meant.
    first. So when this conversation changed the note more than once,
    `get_note_version` the one you'd restore and compare it with the current note; if
    more would go back than they asked for, say so in one line ("이 판으로 돌리면 아까
-   넣은 ○○도 같이 빠져요") and restore on a yes. To undo only the last change, use the
-   undo line of its `edit_note` result instead.
+   넣은 ○○도 같이 빠져요", "Going back to this version also takes out the ○○ I added
+   earlier") and restore on a yes. To undo only the last change, use the undo line
+   of its `edit_note` result instead.
 3. `restore_note_version` on that one, or the one they pick. The current state is
    saved as a new version first, so the restore can itself be undone - tell them the
    text they had before the restore is kept and they can go back to it.

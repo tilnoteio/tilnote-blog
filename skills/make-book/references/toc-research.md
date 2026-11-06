@@ -36,7 +36,8 @@ for a book on a topic.
   period (go through `list_notes` pages until the dates pass it).
 - Otherwise `search_notes` with several wordings and `limit: 50`; when results thin
   out, try a new wording. If you can't tell which notes they mean, ask once: "어떤
-  노트들을 말씀하시는 거예요? 주제나 태그, 기간을 알려 주세요."
+  노트들을 말씀하시는 거예요? 주제나 태그, 기간을 알려 주세요." (In English: "Which
+  notes do you mean? Tell me a topic, a tag or a date range.")
 - `get_note` every note whose excerpt doesn't show what it covers.
 
 Group them by theme; each group is a chapter candidate. Then check the groups against
@@ -44,12 +45,16 @@ the web map (step 3) for what a reader would miss between them; those gaps becom
 points or chapters to research. Every chapter's plan lists the notes it builds on.
 
 Here the user asked for their notes, private ones included: the 목차 노트 gets the line
-`- 비공개 노트: 장에 써도 돼요` (SKILL.md, "Private notes shape the book").
+`- 비공개 노트: 장에 써도 돼요` (`- Private notes: OK to use in chapters` in English
+labels; SKILL.md, "Private notes shape the book").
 
 In the draft, say how many notes you found and which you left out as off-topic, and
 add one line above the closing question: "장은 이 노트들을 바탕으로 새로 써요. 노트는
 그대로 두고, 공개한 노트는 각 장에서 링크해요. 다른 사람 이름이나 회사, 돈·건강
-이야기는 장에 넣지 않아요." If they want their notes themselves as the book's
+이야기는 장에 넣지 않아요." (In English: "I'll write new chapters based on these notes.
+Your notes stay as they are, and chapters link to the ones you've published. Other
+people's names, companies, and anything about money or health stay out of the
+chapters.") If they want their notes themselves as the book's
 pages, say this skill writes new chapters from them, and that they can put existing
 notes into a book themselves in Tilnote's book editor on the web.
 
@@ -72,6 +77,11 @@ would differ a lot. Offer choices so it is quick to answer:
 > 어떤 책이면 좋을까요? ① 처음 배우는 입문서 ② 실무에 바로 쓰는 책 ③ 원리를 깊게
 > 파는 책 - 다 읽고 나서 하고 싶은 일도 한 줄로 알려 주시면 거기에 맞춰 짤게요.
 
+In English:
+> What kind of book would you like? ① a first introduction ② a practical book for work
+> ③ a deep dive into how it works - and if you tell me in one line what you want to do
+> once you've read it, I'll build the book around that.
+
 Otherwise don't ask. Write your assumptions at the top of the draft, where the user can
 correct them.
 
@@ -92,15 +102,16 @@ sources for a Korean user.
 Prefer official, university, publisher and well-known course pages. Skip SEO lists and
 pages that look machine-written. Some subjects (a craft, a hobby) have no syllabus or
 book contents online; then use official guides from makers, associations or
-well-known schools, and say under 뼈대 in the draft what the order rests on. For each page you rely on, keep its exact title, URL
-and one line on what you took from it. Only those pages go in "참고한 자료".
+well-known schools, and say under 뼈대 (`Structure`) in the draft what the order rests on. For each page you rely on, keep its exact title, URL
+and one line on what you took from it. Only those pages go in "참고한 자료" (`Sources`).
 
 Some subjects barely change (a classic, a craft). Then the recent-changes pass is one
 search, and the draft says nothing changed that matters, rather than inventing news.
 
 **No search:** build from what you know, and say once in the draft: "웹 검색을 쓸 수
-없어서 제가 아는 내용으로 짰어요. 최근 바뀐 점은 확인하지 못했어요." Leave
-"참고한 자료" out rather than list pages you never opened.
+없어서 제가 아는 내용으로 짰어요. 최근 바뀐 점은 확인하지 못했어요." (In English: "I
+couldn't search the web, so I built this from what I know. I haven't checked recent
+changes.") Leave "참고한 자료" out rather than list pages you never opened.
 
 ## 4. Build it
 
@@ -123,12 +134,14 @@ search, and the draft says nothing changed that matters, rather than inventing n
 - **Size.** 8-10 chapters by default; anywhere from 6 to 12 when the goal needs it.
   3-5 key points each. Under 5 chapters is a long post - say so. Over 12 is two books,
   or chapters that should be key points.
-- **Titles.** Short (about 25 characters), and say what the reader gets or asks -
-  "Pod" → "Pod 하나로 시작하기". No numbers: the number lives in the 목차.
+- **Titles.** Short (about 25 characters; in English about 3-7 words), and say what
+  the reader gets or asks - "Pod" → "Pod 하나로 시작하기" ("Starting with a single
+  Pod"). No numbers: the number lives in the 목차.
 - **Your own work.** The order and titles are yours. Never take one source's chapter
   list, chapter titles or wording - that is someone else's work, and it would also
   ignore this reader.
-- **The promise.** One sentence: "이 책을 다 읽으면 ~할 수 있어요."
+- **The promise.** One sentence: "이 책을 다 읽으면 ~할 수 있어요." ("After this
+  book, you can ...")
 
 For each chapter, keep for the 목차 노트: title, one line, goal (what the reader can do
 after it), 3-5 key points, the chapters it needs, what to look up when writing, and the
@@ -179,8 +192,28 @@ for every chapter - the draft gets too long to judge. Offer them instead.
 
 When "내 노트에서 가져올 것" names private notes, end it with one line, so the user
 knows they can choose: "비공개 노트는 책을 맞추는 데만 쓰고 장에는 옮기지 않아요. 넣어도
-되면 말씀해 주세요." (Not for "이 노트들로 책 만들어줘" - there they already asked.)
+되면 말씀해 주세요." (In English: "I use private notes only to fit the book to you;
+nothing from them goes into the chapters. Tell me if it's OK to use them.") (Not for "이 노트들로 책
+만들어줘" - there they already asked.)
 
 Leave out a section that has nothing in it ("내 노트에서 가져올 것" when no note fits,
-"뺀 것" when nothing was dropped). On "자세히", show each chapter's goal and key points,
+"뺀 것" when nothing was dropped). On "자세히" ("details"), show each chapter's goal and key points,
 and keep the same question at the end.
+
+### In English
+
+For a user who doesn't write in Korean, the same draft with these labels. "details"
+and "자세히" are the same request.
+
+| Korean | English |
+|---|---|
+| `이 책을 다 읽으면:` | `After this book:` |
+| `누구를 위한 책:` | `Who it's for:` |
+| `분량: 10장, 장마다 10분 안팎` | `Length: 10 chapters, about 10 minutes each` |
+| `함께 쓰는 예제:` | `Running example:` |
+| `어떻게 짰는지` | `How I built it` |
+| `뼈대:` / `최근 바뀐 것:` / `많이 막히는 곳:` / `뺀 것:` | `Structure:` / `What changed recently:` / `Where people get stuck:` / `Left out:` |
+| `참고한 자료` | `Sources` |
+| `내 노트에서 가져올 것`, `→ 2장` | `From your notes`, `→ Chapter 2` |
+| `장마다 다룰 내용까지 보시려면 "자세히"라고 해 주세요.` | `Say "details" to see what each chapter covers.` |
+| `이대로 책을 만들까요? …` | `Shall I make the book like this? Tell me any chapters to drop or add, and changes to the order or depth. If you had a different direction in mind, tell me that too.` |

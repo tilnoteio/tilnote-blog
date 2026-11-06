@@ -1,6 +1,6 @@
 ---
 name: write-post
-description: Writes a blog post with the user and publishes it on their Tilnote blog - checks for an earlier post on the topic and their writing memo, looks the topic up (or first asks a few questions when the post is their own view or a story they lived), saves a private draft, shows it with a short summary and explanation, then works in what they add - their experience and views go in, questions are answered - and publishes only when they say so. Keeps unfinished work in a private idea note. Use whenever the user wants a blog post, article or TIL to publish, even without naming Tilnote - "write a blog post about X", "turn this conversation into a post", "블로그 써줘", "○○ 알아보고 글 쓰고 싶어", "이거 글로 정리해서 올려줘", "오늘 배운 거 TIL로 올려줘", "어제 그 글 아이디어 이어서", "뉴스 2번으로 글 쓰자". Not for a plain question ("○○ 뭐야?"), notes for themselves, a post for another site or platform (WordPress, Medium, a file in their project), emails or reports, improving an existing post (upgrade-post), social media versions (share-post), or news topics (news-reader).
+description: Writes a blog post with the user and publishes it on their Tilnote blog - checks for an earlier post on the topic and their writing memo, looks the topic up (or first asks a few questions when it is their own view or a story they lived), saves a private draft, shows it with a short summary and explanation, works in what they add (their experience, views, questions) and publishes only when they say so. Keeps unfinished work in a private idea note. Use whenever the user wants a blog post, article or TIL to publish, even without naming Tilnote - "write a blog post about X", "turn this conversation into a post", "continue my X idea", "let's write about news item 2", "블로그 써줘", "○○ 알아보고 글 쓰고 싶어", "이거 글로 정리해서 올려줘", "오늘 배운 거 TIL로 올려줘", "어제 그 글 아이디어 이어서", "뉴스 2번으로 글 쓰자". Not for a plain question ("○○ 뭐야?"), notes for themselves, a post for another site or platform (WordPress, Medium, a project file), emails or reports, improving an existing post (upgrade-post), social posts (share-post), or news topics (news-reader).
 ---
 
 # Write a post together (함께 쓰기)
@@ -33,8 +33,10 @@ Otherwise never hand them a lesson, homework or a list of questions before the p
 
 Speak and write in the user's language. The examples here are Korean because most
 Tilnote writers are Korean. A post in English gets English labels too: `## References`
-where a Korean post has `## 참고`, `## FAQ` for `## 자주 묻는 질문`, and `[Idea]` for the
-idea note's title; lengths are in words ([references/post-types.md](references/post-types.md)).
+where a Korean post has `## 참고`, `## FAQ` for `## 자주 묻는 질문`, `(as of October 2026)`
+for `(2026년 10월 기준)`, `*(Image: OpenAI)*` for the picture credit `*(이미지: OpenAI)*`,
+and `[Idea]` for the idea note's title; lengths are in words
+([references/post-types.md](references/post-types.md)).
 In a note that exists, use its headings as they are - and read a heading in either
 language as the same one.
 
@@ -57,10 +59,14 @@ about it.
      post in the chat, as they asked. Leave out only what needs Tilnote - the memo (write in the default
      voice), earlier posts and private notes, saving, pictures and diagrams - and keep
      the rest of this skill: research (2) and the draft (3) as usual, so the topic is
-     looked up, sources are footnotes under `## 참고`, and no experience is invented.
+     looked up, sources are footnotes under `## 참고` (`## References` in English), and
+     no experience is invented.
      Reply with the post itself - the title, then the body - and end with one line,
      not a question:
      > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 글을 비공개 초안으로 저장해 두고, 말씀하실 때 블로그에 올릴 수 있어요.
+
+     In English:
+     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can save this as a private draft and post it to your blog when you say so.
 
      Changes they ask for after that are made in the chat; don't repeat the line.
 2. **Their writing memo.** `search_notes` with `q: "tilnote-style"` and
@@ -86,6 +92,10 @@ about it.
      `publishedAt`) or its facts have clearly moved - put the follow-up first; a new,
      dated post is safer than rewriting a live one:
      > 이 주제로 올린 글이 있어요: [제목](https://tilnote.io/pages/<id>). 이어지는 후속편으로 쓸까요, 그 글을 새 내용으로 고칠까요?
+
+     In English:
+     > You already have a post on this: [title](https://tilnote.io/pages/<id>). Shall I write a follow-up, or update that post with the new material?
+
      - Follow-up: a new post that links to the earlier one near the top, through this
        flow like any post.
      - Update: upgrade-post's job. Hand it the post and what they want in it ("요즘 나온
@@ -93,8 +103,9 @@ about it.
        the same note: what they hand you to put in (their words, a source with
        "더해줘") goes straight in, even on the live post; what you look up is offered
        first - one short message on what would change where, ending "이대로
-       넣을까요?" - and goes in on a yes. New facts come from pages you opened and carry
-       a date ("2026년 11월 업데이트"); what only the user can say is asked in the chat,
+       넣을까요?" ("Want me to make these changes?") - and goes in on a yes. New facts
+       come from pages you opened and carry a date ("2026년 11월 업데이트", "Updated
+       November 2026" in English); what only the user can say is asked in the chat,
        never left in the post; new paragraphs get `aiGenerated: true` on a republish
        that keeps the date.
      - Don't ask when the request already decided ("새 글로 써줘") or the overlap is
@@ -131,12 +142,12 @@ What came in decides the way to the draft:
 | What came in | Way | Then |
 |---|---|---|
 | Only a topic ("로컬 LLM에 대해 블로그 글 써 보고 싶어", "○○ 알아보고 글 써줘") | Research | 3. Draft right away - nothing shown in the chat first |
-| An item from their news briefing ("2번으로 글 쓰자" right after a briefing, "어제 뉴스 그 MCP 소식으로 써 보자") | Research, from the item's own link | 3. Draft right away |
+| An item from their news briefing ("2번으로 글 쓰자" right after a briefing, "어제 뉴스 그 MCP 소식으로 써 보자", "let's write about news item 2") | Research, from the item's own link | 3. Draft right away |
 | Their own view, not yet in the conversation ("AI로 블로그 쓰면 생각이 사라질까, 이거에 대한 내 생각을 쓰고 싶어") | Conversation: a few short questions | 3. Draft from their answers |
 | A story they lived (a debugging session, a retrospective, a review of something they used), with little of it in the conversation | Conversation: a few short questions | 3. Draft from their answers |
-| They want to understand it before writing ("먼저 설명해줘", "나도 잘 몰라서 이해하고 쓰고 싶어", "공부하면서 같이 써 보자") | Conversation: explain, then learn together | 3. Draft when they ask ("이제 써줘") |
+| They want to understand it before writing ("먼저 설명해줘", "나도 잘 몰라서 이해하고 쓰고 싶어", "공부하면서 같이 써 보자") | Conversation: explain, then learn together | 3. Draft when they ask ("이제 써줘", "write it now") |
 | The conversation already holds their part ("이거 글로 정리해서 올려줘"), or "이제 써줘" / "그냥 써줘" while learning | Neither | 3. Draft right away |
-| "어제 그 글 아이디어 이어서", "그거 해 봤어" | Neither - continue the idea note or the private draft | Write what they just told you into it, then go on from where it stopped |
+| "어제 그 글 아이디어 이어서", "그거 해 봤어", "continue my <topic> idea", "I tried it" | Neither - continue the idea note or the private draft | Write what they just told you into it, then go on from where it stopped |
 
 ### Research (리서치)
 
@@ -187,7 +198,8 @@ Note what they say, try and think, as close to their words as you can: it become
 spine of the post. If they stop part-way, save it as a private idea note, tags
 `["tilnote-idea"]` ([references/idea-note.md](references/idea-note.md)), and tell them
 how to resume:
-"다음에 '○○ 글 아이디어 이어서'라고 하시면 돼요."
+"다음에 '○○ 글 아이디어 이어서'라고 하시면 돼요." (In English: "Next time, just say
+'continue my <topic> idea'.")
 
 ### Neither (없이)
 
@@ -195,7 +207,7 @@ The material is already here. When continuing, find the idea note: `search_notes
 with `q` the topic words and `tags: ["tilnote-idea"]`, and take the idea note on the
 topic (for a news briefing item, step 3 of
 [references/news-item.md](references/news-item.md)). With no topic words ("어제 그 글
-아이디어 이어서", "그거 해 봤어" in a new conversation), `list_notes` with
+아이디어 이어서", "그거 해 봤어", "I tried it" in a new conversation), `list_notes` with
 `tag: "tilnote-idea"`, `sort: "updated"` and `limit: 5`: take the newest, or the one
 edited on the day they name, and name it in your reply; if two are equally likely,
 list their titles and ask. If their message brings a result, a question or a view,
@@ -232,7 +244,10 @@ only backs or tests it, and the view itself never comes from you.
 first-person experience they did not tell you about - a plausible invented anecdote
 under their name is worse than none. A review of something they never used is not a
 review; make it a how-to or a news round-up instead. Keep general advice general -
-"우리 팀", "저희" in it reads as the writer's own experience.
+"우리 팀", "저희" in it reads as the writer's own experience. A memo rule that needs
+their own experience (first person, "open with the problem I hit", a "what tripped me
+up" phrase) waits until they tell you one at 4; until then write to the reader and
+follow the rest of the memo.
 
 **From a private note, only what the post needs.** A note the user wrote for
 themselves can hold other people's names, a client or company name, contact details,
@@ -278,7 +293,8 @@ number and the `## 참고` lines as the post's source list:
 - The search term near the front of the title ("맥북 에어 8GB로 로컬 LLM 돌려 본
   후기"), not a label ("로컬 LLM 생각"). `##` headings that say the answer or the
   step, not "결과" or "마무리".
-- A date next to time-sensitive facts - prices, versions, limits: "2026년 10월 기준".
+- A date next to time-sensitive facts - prices, versions, limits: "2026년 10월 기준"
+  ("as of October 2026" in English).
 - The 1-3 internal links you picked, public addresses only.
 - At most one diagram, only when a process or comparison is hard to follow in text:
   SVG through `create_image_from_svg`, with `alt` text.
@@ -291,10 +307,11 @@ patterns in [references/korean-ai-tells.md](references/korean-ai-tells.md) - for
 post in English, [references/english-ai-tells.md](references/english-ai-tells.md).
 
 **Save it privately.** `create_note` with `aiGenerated: true` - you drafted the body
-even though their sentences are in it - and a `summary`: Tilnote's 3줄 요약, one lead
-sentence and up to three "- " lines, as in [references/seo.md](references/seo.md). The
-summary stays on the note: Tilnote's publish dialog fills it in instead of generating
-one, and it shows above the post once it is published. Write the body straight into
+even though their sentences are in it - a `summary`: Tilnote's 3줄 요약, one lead
+sentence and up to three "- " lines, as in [references/seo.md](references/seo.md) -
+and up to five `tags`, the words people search for. The summary stays on the note:
+Tilnote's publish dialog fills it in instead of generating one, and it shows above the
+post once it is published. Write the body straight into
 the tool's `content`; do not print the post into the chat, which writes everything
 twice and doubles the wait.
 
@@ -343,9 +360,11 @@ Show only:
   넣어줘'라고 하세요."
 - one line that keeps the conversation open, not a question: "궁금한 건 물어보시고,
   더 넣고 싶은 내용이나 직접 해 본 경험·생각을 말씀해 주시면 글에 넣을게요. 이대로
-  올리려면 '올려줘'라고 하세요." When the post is built on what they tried (a review,
-  a fix), it may name their screenshots among what they can bring ("…경험·생각,
-  캡처한 화면을 말씀해 주시면…").
+  올리려면 '올려줘'라고 하세요." (In English: "Ask me anything about it. Tell me what
+  else you'd like in it, or what you've tried and what you think, and I'll work it in.
+  To publish it as it is, say 'publish it'.") When the post is built on what they tried
+  (a review, a fix), it may name their screenshots among what they can bring
+  ("…경험·생각, 캡처한 화면을 말씀해 주시면…").
 
 ### Talk and revise
 
@@ -368,11 +387,11 @@ the post has no source list.
 
 - **A question** → answer it briefly in the chat and leave the draft as it is. If
   readers of the post would want the answer too and the post doesn't cover it, end
-  with one line: "이 내용도 글에 넣을까요?" Offer it once in the conversation: after
-  that they know they can ask for it, so later answers just answer - no offer every
-  turn. On a yes ("넣어줘", "응"), add it where it belongs - or as a short FAQ built
-  only from questions they asked - and say where. A question off to the side is just
-  answered.
+  with one line: "이 내용도 글에 넣을까요?" ("Want this in the post too?") Offer it
+  once in the conversation: after that they know they can ask for it, so later answers
+  just answer - no offer every turn. On a yes ("넣어줘", "응"), add it where it
+  belongs - or as a short FAQ built only from questions they asked - and say where. A
+  question off to the side is just answered.
 - **Something to add** - a point, a section, a link, "이것도 넣어줘" → put it where it
   fits. A fact that can change gets looked up and dated like the rest; cite only pages
   you opened. A new source takes the next unused footnote number - `get_note` and
@@ -416,38 +435,45 @@ one they had - then show the old and the new summary and ask.
 
 End the reply there: no homework ("돌려 보시고 결과를 알려 주세요"), no new questions
 for them to answer beyond that one offer - the conversation stays open on its own.
-Don't repeat the "궁금한 건 물어보시고…" line every turn. When they say "올려줘",
-publish (5).
+Don't repeat the "궁금한 건 물어보시고…" line every turn. When they say "올려줘"
+("publish it"), publish (5).
 
 ## 5. Publish (발행)
 
 **Publish only when they say so.** Run the checks in
 [references/publish.md](references/publish.md): time-sensitive facts re-checked if you
 can search, title, summary and tags ready.
-Then ask "이대로 공개할까요?" and publish on a clear yes: draw the cover image
-([references/cover.md](references/cover.md)), then `publish_note` with the same
-`pageId` (never a second copy), the `summary` the note has now (`get_note` shows it,
-with any change the user made in the editor), up to five `tags`, the cover as
-`thumbnailUrl`, and `aiGenerated: true`.
+Then ask "이대로 공개할까요?" ("Publish it like this?") and publish on a clear yes:
+draw the cover image ([references/cover.md](references/cover.md)), then `publish_note`
+with the same `pageId` (never a second copy), the `summary` the note has now
+(`get_note` shows it, with any change the user made in the editor), up to five `tags`,
+the cover as `thumbnailUrl`, and `aiGenerated: true` when you drafted or substantially
+wrote the body (you saved it with `create_note` in this flow, or `get_note` shows
+`AI-generated: yes`); a draft the user wrote themselves goes out without it.
 
 The request itself counts as the yes when the user asked to publish ("올려줘",
-"발행해줘") **and** they know what goes out: the post is
+"발행해줘", "publish it", "post it") **and** they know what goes out: the post is
 built on their own part from this conversation, or it is a draft you saved and showed
 them earlier (with whatever they added since). That keeps "한 마디로 올리기" working
 without publishing a post nobody has seen. Then go straight through in this turn -
 `create_note` if it isn't saved yet, the publish.md checks, the cover, `publish_note`
 - with no "show only" list and no question, and give the after-publishing reply.
-"써서 바로 올려줘" with only a topic is not that: show the draft as usual and ask,
-unless they clearly meant it to go out unseen ("확인 안 해도 돼, 바로 올려").
+"써서 바로 올려줘" ("write it and post it") with only a topic is not that: show the
+draft as usual and ask, unless they clearly meant it to go out unseen ("확인 안 해도
+돼, 바로 올려", "no need to show me, just post it").
 
 **After publishing,** reply with three things and nothing more:
 
 - the link, and in the same line, when you drew one, that the post has a cover image
-  ("대표 이미지도 만들어 넣었어요")
-- one line they can paste into KakaoTalk or Threads to share it, in the post's own
-  voice - it goes out under their name
-- one offer: "스레드·링크드인 같은 SNS용 문구도 만들어 드릴까요?" - a yes is the
-  share-post skill's job.
+  ("대표 이미지도 만들어 넣었어요", "I drew a cover image for it too"), and when you
+  wrote its summary at publish time (publish.md, check 4), that too in a few words
+  ("검색·공유 카드용 요약도 써 넣었어요", "I added a short summary for search and
+  share cards")
+- one line they can paste into KakaoTalk or Threads (X, Threads or LinkedIn for a
+  writer who doesn't write in Korean) to share it, in the post's own voice - it goes
+  out under their name
+- one offer: "스레드·링크드인 같은 SNS용 문구도 만들어 드릴까요?" ("Want versions for
+  Threads, X or LinkedIn too?") - a yes is the share-post skill's job.
 
 If a call fails - no publish permission, too short, the daily limit,
 Tilnote's publish check - see "If a call fails" in

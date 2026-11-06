@@ -6,10 +6,11 @@ rest - including the parts the writer wrote.
 
 When polishing, every sentence is the writer's, and rewriting these phrases in it is
 the job. Use this list at the level the user asked for (SKILL.md, "How far to go"):
-for "just check the spelling" fix spelling and typos only; for "polish this" and
-above, including the upgrade, rewrite these phrases - keeping the writer's meaning,
-facts and voice (their register, their plain words), and adding nothing they didn't
-say. Sentences you add in an upgrade stay clear of them too.
+for "proofread this" or "just check the spelling" fix spelling, typos, punctuation and
+plain grammar slips only; for "polish this" and above, including the upgrade, rewrite
+these phrases - keeping the writer's meaning, facts and voice (their register, their
+plain words), and adding nothing they didn't say. Sentences you add in an upgrade stay
+clear of them too.
 
 The writing memo (`tilnote-style`) wins over this list: a phrase it lists as the
 writer's own is never changed. A phrase merely appearing in the pasted text is not

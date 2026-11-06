@@ -10,7 +10,8 @@ material: which of their posts people read, what they started and never finished
 and what turned up in their news briefings this week. Every suggestion here points at
 one of those - that reason is the product, the title is the garnish.
 
-Speak in the user's language. Examples are Korean because most Tilnote writers are.
+Speak in the user's language. Examples are Korean because most Tilnote writers are;
+the fixed lines have an English form next to them.
 
 ## 1. Gather (read-only)
 
@@ -23,13 +24,16 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
      normally: a few ideas from what the conversation shows about them and what they
      write about - no claims about their posts, notes or numbers. End with one line:
      > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 올린 글의 반응과 써 두다 만 노트를 보고 다음 글을 골라 드릴 수 있어요.
+
+     In English:
+     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can pick your next post from how your published posts are doing and the notes you left unfinished.
 2. `search_notes` with `q: "tilnote-style"` and `tags: ["tilnote-style"]` for their
-   `내 문체 메모` and `get_note` it if it exists - who they write for shapes which ideas
-   fit. If it has `## 모드:` (`## Mode:`) sections, each mode's `언제:` (`When:`) line is a kind of post they
+   `내 문체 메모` (`My writing style` in an English account) and `get_note` it if it
+   exists - who they write for shapes which ideas fit. If it has `## 모드:` (`## Mode:`) sections, each mode's `언제:` (`When:`) line is a kind of post they
    write; a candidate can fit any of them.
 3. **Readers:** `get_note_stats` with `allTime: true` and `limit: 10` - every published
    post however old, and the 10 most-read. Views and likes are **lifetime totals per
-   post**, not views by date - never write "지난 7일 조회수".
+   post**, not views by date - never write "지난 7일 조회수" ("views in the last 7 days").
    If it answers that the stats took too long (an account with thousands of posts),
    call it once more with `days: 365` and `limit: 10`. `days` filters posts by when
    they were published, so that answer holds only the last year's posts - older ones
@@ -39,7 +43,8 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
    `page: 2`, `3`, ... while `pagination.hasMore` is true, up to 4 pages (the newest
    200 private notes). Unfinished material is here - but not the working notes,
    tagged `tilnote-style`, `tilnote-news-topics`, `tilnote-share` or `tilnote-news`,
-   and not a book's notes: a 목차 note, tagged `tilnote-book-toc`, and the chapter
+   and not a book's notes: a 목차 note (the `"<Book title>" contents` note in English),
+   tagged `tilnote-book-toc`, and the chapter
    notes that carry its other tag - those were written for a book the user reads,
    not as blog drafts.
 5. **Idea notes:** `search_notes` with `q: "tilnote-idea"` and
@@ -48,7 +53,8 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
    ("Where it stands" in English) says how close it is.
 6. **News briefings:** from the `list_notes` pages you already have (newest created
    first; briefings are private notes), the notes tagged `tilnote-news` - recent news
-   on the topics the user follows, each item with a 글 아이디어 question. `get_note` the
+   on the topics the user follows, each item with a 글 아이디어 (`Post idea:` in an
+   English briefing) question. `get_note` the
    newest one or two from the last week, going by the date in the title. Don't look
    for them with `search_notes`: it ranks by relevance, not date. If there are none,
    skip this without comment.
@@ -117,13 +123,19 @@ Short, in this order:
 어느 걸로 써 볼까요?
 ```
 
+In English the fixed lines read `17 published posts, 3,400 views in total (each post's
+views add up from the day it went up, so older posts have a head start)`, `Most read:
+[title](url), 820 views`, `What to write next`, `Posts worth fixing` and "Which one
+would you like to write?"
+
 One question at the end. No list of six improvements. When the user asked only for a
-check-up, the question is which post to fix first ("어느 글부터 고쳐 볼까요?").
+check-up, the question is which post to fix first ("어느 글부터 고쳐 볼까요?" -
+"Which post should we fix first?").
 
 The numbers line covers every published post. Only after the `days: 365` fallback
-does it start "최근 1년 사이 올린 글" and add how many older posts it leaves out
-("1년 넘은 글 5편은 이 숫자에 없어요") - never present a year's totals as the whole
-blog.
+does it start "최근 1년 사이 올린 글" ("Posts published in the last year") and add how many
+older posts it leaves out ("1년 넘은 글 5편은 이 숫자에 없어요" - "5 posts older than
+a year aren't in these numbers") - never present a year's totals as the whole blog.
 
 With no published posts yet, skip the numbers and suggest from notes, idea notes and
 news briefings. With nothing at all, ask what they've been working on or learning
@@ -146,9 +158,11 @@ change before touching the live post.
 
 ## Don'ts
 
-- Never phrase lifetime totals as a period ("이번 주 조회수"). A post's age is fine
-  context ("올린 지 열흘 된 글인데 조회 140"); a time window for views is not.
-- Views are page views, not people: "조회 1,240", never "1,240명이 읽은".
+- Never phrase lifetime totals as a period ("이번 주 조회수", "views this week"). A
+  post's age is fine context ("올린 지 열흘 된 글인데 조회 140"); a time window for
+  views is not.
+- Views are page views, not people: "조회 1,240" ("1,240 views"), never
+  "1,240명이 읽은" ("1,240 people read").
 - Don't merge stats into a dashboard of numbers - one or two lines of numbers, then
   the ideas.
 - Don't write anything here. This skill only reads; writing starts once they choose.

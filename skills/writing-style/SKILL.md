@@ -47,9 +47,15 @@ Check first that the Tilnote tools are there. If not:
   memo from it as in "Learning from their posts", steps 2-4, and show it in the chat -
   nothing is saved, so instead of "이대로 저장할까요?" end with one line:
   > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 메모를 비공개 노트로 저장해 두고, 이 플러그인을 쓰는 어느 AI 앱에서든 글을 쓸 때 이 문체를 따라요.
+
+  In English:
+  > Connect Tilnote (`https://tilnote.io/mcp`) and I'll save this memo as a private note, so posts follow your style in any AI app with this plugin.
 - **A rule they state** ("앞으로 '~요'로 써줘", "'혁신적인' 쓰지 마") → follow it in the
   posts you write in this conversation, say so in a line, and end with one line:
   > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 규칙을 '내 문체 메모'에 저장해 두고, 이 플러그인을 쓰는 다른 AI 앱에서 글을 쓸 때도 따라요.
+
+  In English:
+  > Connect Tilnote (`https://tilnote.io/mcp`) and I'll save this rule in your 'My writing style' memo, so other AI apps with this plugin follow it too.
 - **Anything that needs their notes** - learning from their published posts, "내 문체
   메모 보여줘", changing or deleting the memo → say in one line that Tilnote isn't
   connected yet and where to connect it (the app's connection settings, `/mcp` in a
@@ -97,10 +103,12 @@ Check first that the Tilnote tools are there. If not:
      Keep the existing 고친 기록 lines.
 4. **Show it and ask.** Show the whole memo draft in the chat (it is short, and
    reading it is the point), with today's 고친 기록 line already in it ("2026-10-30
-   내 글 2편으로 문체 배우기"). When it updates an existing memo, say in one line above
+   내 글 2편으로 문체 배우기"; in English "2026-10-30 Learned from 2 of my posts").
+   When it updates an existing memo, say in one line above
    the draft what is new or changed - never mark it inside the memo ("(전에 정하신
    규칙)", "(새로)"): what you show is what gets saved. Then: "이대로 저장할까요? 고칠
-   곳이 있으면 말씀해 주세요."
+   곳이 있으면 말씀해 주세요." (in English: "Shall I save it like this? Tell me anything
+   you'd change.")
 5. **Save on a yes.**
    - The memo exists → change that note, never a second one: one `edit_note` on the
      sections that change - `replace` with `section` for a section you redrafted, with
@@ -116,7 +124,9 @@ Check first that the Tilnote tools are there. If not:
      `["tilnote-style"]`. Its 고친 기록 starts with today's line.
 
    Give the note link and one line: "이 플러그인과 틸노트를 연결한 어느 AI 앱에서든 글을 쓸 때 이
-   메모를 먼저 읽어요. 틸노트에서 직접 고치셔도 돼요."
+   메모를 먼저 읽어요. 틸노트에서 직접 고치셔도 돼요." (in English: "Any AI app with this
+   plugin and Tilnote reads this memo before writing a post. You can also edit it in
+   Tilnote directly.")
 
 ## Learning a mode
 
@@ -147,7 +157,8 @@ When the user names a kind of writing ("블로그 말투는 따로 배워줘", "
 4. **Show the whole memo and ask**, as in step 4, with one line above the draft saying
    what moved where ("지금 말투는 '뉴스레터' 모드로 옮기고 '블로그' 모드를 새로
    만들었어요. 공통에는 존댓말과 안 쓰는 말만 남았어요."). Save on a yes, as in step
-   5, with a 고친 기록 line ("2026-11-03 '블로그' 모드 추가 - 내 글 2편").
+   5, with a 고친 기록 line ("2026-11-03 '블로그' 모드 추가 - 내 글 2편"; in English
+   "2026-11-03 Added 'Blog' mode - from 2 of my posts").
 
 ## Learning as you go
 
@@ -158,12 +169,16 @@ When the user names a kind of writing ("블로그 말투는 따로 배워줘", "
   `edit_note`: the rule into the right section (`append` with its `section`, or
   `replace` with `find` on the line it changes) and a dated line with
   `section: "고친 기록"` (`"Change log"` in an English memo). Reply in one or two
-  lines quoting the line as you saved it, with the note link. If the memo doesn't
-  exist yet, create it with just this (title and tag as in step 5).
+  lines quoting the line as you saved it, with the note link. If you say where the
+  memo applies, say it as step 5 does - AI apps with this plugin and Tilnote, not
+  every app connected to Tilnote (in English: "Any AI app with this plugin and Tilnote
+  reads this memo before writing a post."). If the memo doesn't exist yet, create it
+  with just this (title and tag as in step 5).
 - **They correct the same thing twice** while you write or polish (changing "~습니다"
   back to "~요" again) → ask once: "앞으로도 이렇게 할까요? '내 문체 메모'에 적어
-  둘게요." Write it only on a yes. Never record a preference silently - a memo the
-  user didn't agree to is a memo they stop trusting.
+  둘게요." (in English: "Shall I keep doing it this way? I'll note it in your 'My
+  writing style' memo.") Write it only on a yes. Never record a preference silently -
+  a memo the user didn't agree to is a memo they stop trusting.
 - **A rule for one kind of writing** ("뉴스레터는 '감사합니다!'로 끝내", "블로그 글은
   번호 목록 써도 돼") → if a mode by that name, or whose `언제:` line fits, exists, the
   rule goes in that mode. If none does, it goes in the common part - unless they said

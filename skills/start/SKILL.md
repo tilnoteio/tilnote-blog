@@ -1,6 +1,6 @@
 ---
 name: start
-description: Shows a new user around the Tilnote Blog plugin and starts their first real step with them. Checks that Tilnote is connected, looks at where their account stands - published posts, the "내 문체 메모" note, the "내 뉴스 토픽" note, recent idea notes, books - then shows in one short message what they can ask for, with a sentence to say for each, and recommends one first step that fits them. Saves nothing itself. Use when the user asks how to use this plugin or doesn't know where to begin - "처음인데 뭐부터 해?", "틸노트 블로그 어떻게 써?", "이거 뭐 할 수 있어?", "사용법 알려줘", "튜토리얼", "시작하기", how do I use this, getting started, what can you do. Not when the request already names a task ("로컬 LLM에 대해 블로그 글 써 보고 싶어", "뉴스 돌려줘", "내 문체 기억해줘") - that skill runs directly. Not for how-to questions about the Tilnote website's own screens.
+description: Shows a new user around the Tilnote Blog plugin and starts their first real step with them. Checks that Tilnote is connected, looks at where their account stands - published posts, the "내 문체 메모" note, the "내 뉴스 토픽" note, recent idea notes, books - then shows in one short message what they can ask for, with a sentence to say for each, and recommends one first step that fits them. Saves nothing itself. Use when the user asks how to use this plugin or doesn't know where to begin - "처음인데 뭐부터 해?", "틸노트 블로그 어떻게 써?", "이거 뭐 할 수 있어?", "사용법 알려줘", "튜토리얼", "시작하기", how do I use this, getting started, what can you do, "where do I start?", "I just installed this plugin". Not when the request already names a task ("로컬 LLM에 대해 블로그 글 써 보고 싶어", "뉴스 돌려줘", "내 문체 기억해줘") - that skill runs directly. Not for how-to questions about the Tilnote website's own screens.
 ---
 
 # Getting started (시작하기)
@@ -104,6 +104,19 @@ sentences to say in English - these are the ones the skills answer to:
 | Make a book | "Make me a book on X" (with a book: "Show me my books") |
 | To continue | "Next chapter", "Continue my X idea" |
 
+The rest of the message in English:
+
+| Part | In English |
+|---|---|
+| First line | Tilnote Blog lets you write posts by chatting and publish them on your Tilnote blog. There are no buttons - just say things like the lines below. |
+| Account line | `Your account: 40 posts published (12 in the last year) · no writing style memo · no news topics · 1 book`; an empty account: `Your account: nothing here yet` |
+| Groups | `Write`, `After you publish`, `Keep going` |
+| No published post | `(after you publish)` after the name |
+| What stays private | Drafts, memos and briefings all stay as private notes and go public only when you say "publish it". Nothing is posted to social networks for you. |
+| First step | I'd start with "What should I write next?" - I'll pick candidates from your posts and notes, and once you choose one I'll draft it right away. |
+| To continue | `To continue: chapter 1 of "…" isn't written yet → "Next chapter"`; an idea note → "Continue my <topic> idea" |
+| Closing question | Shall we start there? You can pick any other line too. |
+
 Sentences that fit where they stand:
 
 | They have | Say instead |
@@ -123,11 +136,12 @@ The first row that fits:
 
 | Where they stand | Recommend | Reason line |
 |---|---|---|
-| No published post at all (`publishedPostsAllTime` 0) | A first post. Ask what they learned, tried or fixed this week - that answer becomes the topic | "올린 글이 아직 없어서, 이번 주에 해 본 것 하나로 첫 글을 같이 써 보면 좋아요" |
+| No published post at all (`publishedPostsAllTime` 0) | A first post. Ask what they learned, tried or fixed this week - that answer becomes the topic | "올린 글이 아직 없어서, 이번 주에 해 본 것 하나로 첫 글을 같이 써 보면 좋아요" ("You haven't published anything yet, so let's write a first post together about one thing you tried this week.") |
 | Published posts | "다음에 뭐 쓰지?" | Candidates come from their own posts and notes, and picking one starts the draft |
 
 For a first post, the closing question is that question ("이번 주에 배운 거나 해 본 것
-하나만 알려 주세요"), not "이걸로 시작해 볼까요?".
+하나만 알려 주세요" - "Tell me one thing you learned or tried this week."), not
+"이걸로 시작해 볼까요?".
 
 Never recommend "내 문체 기억해줘" as the first step, even with many posts and no memo.
 Published posts are not necessarily the user's own writing - many are drafted with
@@ -144,7 +158,8 @@ those who want it.
 - **A question about one feature** ("뉴스 리더가 뭐야?", "책은 어디서 봐?") → three or
   four lines from [references/features.md](references/features.md): what it does,
   what it keeps in Tilnote, one sentence to say. Then ask whether to try it.
-- **"나중에 할게"** → one line: they can say "처음인데 뭐부터 해?" any time. Stop.
+- **"나중에 할게"** → one line: they can say "처음인데 뭐부터 해?" ("Where do I
+  start?") any time. Stop.
 
 If the next skill isn't available, carry on yourself the same way: save drafts
 privately with no questions or blanks in them, never invent their experience, show a

@@ -41,6 +41,11 @@ an alternative. Add one short line that they can have the post any time:
 >
 > 바로 쓰려면 '이제 써줘'라고 하세요.
 
+In English the labels are **In one line:**, **What to know**, **Where people
+disagree**, **To try it yourself (about 10 min)**, `- Watch for:` and **Sources**, and
+the closing lines are "Ask me anything you're curious about - for example: ..." and
+"To have the post written now, say 'write it now'."
+
 ## Rules that matter
 
 - **Plain words over completeness.** Three points they understand beat seven they
@@ -107,11 +112,12 @@ each one into that note as it comes, not only at the end - see
 
 **When to suggest writing.** Once the writer has contributed at least one thing of
 their own - a question with its answer, a result from trying, or a view, here or
-already in their idea note - offer: "이제 글로 정리해 볼까요?" Let them decide when,
-and write as soon as they ask ("이제 써줘", "그냥 써줘"). Don't drag it out with more
-questions.
+already in their idea note - offer: "이제 글로 정리해 볼까요?" ("Shall we turn this
+into a post?") Let them decide when, and write as soon as they ask ("이제 써줘", "그냥
+써줘", "write it now"). Don't drag it out with more questions.
 
 **If they stop part-way** ("오늘은 여기까지", "주말에 해 볼게"), save what you have as a
 private idea note so a new conversation can pick it up - or, when you are working
 from one, update its "어디까지 했나" - see [idea-note.md](idea-note.md). Tell them how
-to resume: "다음에 '○○ 글 아이디어 이어서'라고 하시면 돼요."
+to resume: "다음에 '○○ 글 아이디어 이어서'라고 하시면 돼요." (In English: "Next time,
+just say 'continue my <topic> idea'.")

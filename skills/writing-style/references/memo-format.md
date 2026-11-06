@@ -112,7 +112,8 @@ can't hold both, so the memo can keep **modes**.
   and add it on a yes.
 - **글에서 짐작한 것** - inferred, not confirmed. Other skills follow these lightly;
   once the user confirms one, move it to its section. A guess about one mode says so:
-  "(확인 전, 블로그) 소제목은 질문으로".
+  "(확인 전, 블로그) 소제목은 질문으로" (in English "(unconfirmed, Blog) Headings as
+  questions").
 - **고친 기록** - one dated line per change, newest last. Keep the latest ten; drop
   older lines once the rule they added is in its section.
 

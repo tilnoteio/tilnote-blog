@@ -15,7 +15,7 @@ these rules passes its check the first time.
 | KakaoTalk | About 4 lines | At the end | None → copy | 3-4 polite lines + link |
 | Band | Loose | Added on a new line | `band.us/plugin/share?body=&route=` | Like KakaoTalk, a little longer |
 | Naver Blog | - | At the end | `share.naver.com/web/shareView?url=&title=` (link and title only) | **Summary + link only** - copying the whole post makes a duplicate and both rank down |
-| Instagram | Caption 2,200, first ~125 visible, at most 5 hashtags | Not clickable → "프로필 링크" | None → copy, plus a card image | 1080×1350 card + caption |
+| Instagram | Caption 2,200, first ~125 visible, at most 5 hashtags | Not clickable → "프로필 링크" ("link in bio") | None → copy, plus a card image | 1080×1350 card + caption |
 
 How each one is posted:
 
@@ -49,8 +49,8 @@ link separately where it matters, including at the end of a thread's last post.
 - **Bluesky:** 300 graphemes including the blank line and the link. The link counts
   only as the short form the composer shows (`tilnote.io/pages/6a…`, about 26), not its
   full length, so the text gets about 270 - keep it under about 260.
-- **LinkedIn:** 3,000; the first ~210 show before "더 보기".
-- **Instagram:** 2,200; ~125 show before "더 보기"; 5 hashtags at most.
+- **LinkedIn:** 3,000; the first ~210 show before "더 보기" ("see more").
+- **Instagram:** 2,200; ~125 show before "더 보기" ("more"); 5 hashtags at most.
 - **KakaoTalk, Band, Facebook:** no limit that matters; the preview shows about 4 lines.
 
 ## The example post
@@ -113,14 +113,15 @@ place the link appears in the thread.)
 
 ## LinkedIn
 
-- **Shape:** the first two lines are the hook - they show before "더 보기". Then short
-  paragraphs with blank lines: the situation, what was done, what was learned, who it
-  helps. 600-1,300 characters when the post has that much to say; a short post gets a
-  short version - never pad it.
+- **Shape:** the first two lines are the hook - they show before "더 보기" ("see
+  more"). Then short paragraphs with blank lines: the situation, what was done, what
+  was learned, who it helps. 600-1,300 characters when the post has that much to say;
+  a short post gets a short version - never pad it.
 - **Tone:** the writer, at work. First person only for what the post says they did.
   What it means for work, not hype.
 - **Hashtags:** 3-5 at the end, search words.
-- **Link:** at the end, after a line like "전체 과정은 블로그에 정리했어요:".
+- **Link:** at the end, after a line like "전체 과정은 블로그에 정리했어요:" ("I wrote up the
+  whole process on my blog:" in English).
 
 ```text
 회사 문서를 밖으로 보내지 않고 AI로 요약할 수 있을까요?
@@ -206,11 +207,12 @@ Ollama로 3B 모델을 받아 회의록 요약을 시켰더니 한 문장에 10�
 ## Instagram
 
 - **Shape:** a card image (see card.md) plus a caption. The caption's first line is
-  the hook (it shows before "더 보기"), then 3-6 short lines of the key points, then
-  where to read more.
+  the hook (it shows before "더 보기" - "more" in English), then 3-6 short lines of
+  the key points, then where to read more.
 - **Hashtags:** 3-5 at the end, at most 5.
-- **Link:** not clickable in captions - write "전체 글은 프로필 링크에서", and remind the
-  user to put the tracked link in their profile or a story link.
+- **Link:** not clickable in captions - write "전체 글은 프로필 링크에서" ("Full post: link
+  in bio" in English), and remind the user to put the tracked link in their profile or
+  a story link.
 
 ```text
 맥북 에어 8GB로 로컬 LLM, 돌아갈까?

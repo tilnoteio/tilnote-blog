@@ -1,6 +1,6 @@
 ---
 name: make-book
-description: Makes a Tilnote book the user wants to read, table of contents first. From a topic, researches how the subject is usually taught and ordered - official guides and learning paths, course syllabi, tables of contents of well-regarded books, what changed recently, where learners get stuck - and the user's own Tilnote notes, then drafts a table of contents for their level and goal. On a yes, creates a private Tilnote book whose first page is a table of contents note with every chapter's plan; a chapter is written when the user picks it and goes into the book at its place. Use when the user says "make me a book on X", "○○ 책 만들어줘", "○○ 책으로 공부하고 싶어", "책 목차 짜줘", "이 노트들로 책 만들어줘", or about their Tilnote books "내 책 보여줘", "Git 책 목차 보여줘", "show me chapter 3", "3장 보여줘", "다음 장", "책 이어서 읽자", "남은 장 다 써줘", "목차에 장 하나 추가해줘", "책 제목 바꿔줘". Not for recommending published books to read ("파이썬 책 추천해줘") or a quick question about a topic - answer those normally. Not for a blog post or a series of posts.
+description: Makes a Tilnote book the user wants to read, table of contents first. From a topic, researches how it is usually taught and ordered - official guides, syllabi, well-regarded books' contents, recent changes, where learners get stuck - and the user's Tilnote notes, then drafts a table of contents for their level and goal. On a yes, creates a private Tilnote book whose first page is a contents note with every chapter's plan; a chapter is written when the user picks it and goes into the book at its place. Use when the user says "make me a book on X", "I want to learn X from a book", "○○ 책 만들어줘", "○○ 책으로 공부하고 싶어", "책 목차 짜줘", "이 노트들로 책 만들어줘", or about their Tilnote books "show me my books", "내 책 보여줘", "Git 책 목차 보여줘", "show me chapter 3", "3장 보여줘", "next chapter", "다음 장", "책 이어서 읽자", "남은 장 다 써줘", "목차에 장 하나 추가해줘", "책 제목 바꿔줘". Not for recommending published books ("파이썬 책 추천해줘", "recommend a Python book") or a quick question about a topic - answer those normally. Not for a blog post or a series of posts.
 ---
 
 # Make a book (책 만들기)
@@ -27,9 +27,10 @@ page list shows only titles. They read it on the book's page in their Tilnote (t
 `/users/books/…` link the tools return).
 
 Speak in the user's language. Examples are Korean because most Tilnote users are.
-For a user who doesn't write in Korean, the 목차 노트 uses English labels ("In English"
-in [references/toc-note.md](references/toc-note.md)), chapters are measured in words,
-and AI-sounding phrases are those in
+For a user who doesn't write in Korean, the fixed lines below have an English form
+(next to them, or in "Fixed lines in English" at the end), the 목차 노트 uses English
+labels ("In English" in [references/toc-note.md](references/toc-note.md)), chapters
+are measured in words, and AI-sounding phrases are those in
 [references/english-ai-tells.md](references/english-ai-tells.md). Dates are the
 user's local date - Korean time for a Korean user.
 
@@ -46,11 +47,12 @@ from published notes, linked by the `publicUrl` the tools return
 (`https://tilnote.io/pages/…`); from a private note, no fact, sentence, number or name,
 and no link. When the user asks to include their private notes ("비공개 노트도
 넣어줘", or the notes they give for "이 노트들로 책 만들어줘"), the 목차 노트 gets the
-line `- 비공개 노트: 장에 써도 돼요`, and chapters may then use the private notes in
+line `- 비공개 노트: 장에 써도 돼요` (`- Private notes: OK to use in chapters` in a
+note with English labels), and chapters may then use the private notes in
 their plans - leaving out other people's names, clients or companies, contact
 details, money and health - still without linking them. Asked in a later
 conversation, add that line with one `edit_note` (`insert_after` the `함께 쓰는 예제`
-line).
+line - `Running example:` in a note with English labels).
 
 ## Before anything else
 
@@ -58,11 +60,17 @@ line).
    - **They only said they want to study or read about a subject** ("○○ 책으로 공부하고
      싶어") → answer normally with books to read, and end with one line:
      > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 수준에 맞춘 책을 만들어 드릴 수 있어요.
+
+     In English:
+     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can make you a book at your level.
    - **A new book or its table of contents** ("쿠버네티스 책 만들어줘", "○○ 책 목차
      짜줘") → draft the table of contents in the chat as in "Drafting the table of
      contents", steps 2-5 - no notes to look in and no tags to check - and instead of
      "이대로 책을 만들까요?" end with one line:
      > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 목차로 비공개 책을 만들고, 읽고 싶은 장을 그때그때 써서 넣어 드려요.
+
+     In English:
+     > Connect Tilnote (address `https://tilnote.io/mcp`) and I'll make this a private book and write each chapter when you want to read it.
 
      Changes they ask for are made to the draft in the chat; don't repeat the line.
    - **Anything else** - their books, a chapter, a change to a book, making the book
@@ -73,16 +81,16 @@ line).
 
 | The user says | Go to |
 |---|---|
-| "쿠버네티스 책 만들어줘", "○○ 책 목차 짜줘", "이 노트들로 책 만들어줘" | Drafting the table of contents |
-| "○○ 책으로 공부하고 싶어", "○○에 대한 책 보고 싶어" - neither making one nor Tilnote is mentioned | Ask once: "읽을 만한 책을 추천해 드릴까요, 아니면 수준에 맞춘 책을 틸노트에 만들어 드릴까요?" If the reader's level or goal is open in a way that changes the book, put that choice in the same message ("만든다면 ① 처음 배우는 입문서 ② 실무에 바로 쓰는 책 중 어느 쪽인지도 알려 주세요"). Recommendations → answer normally, without this skill. Made → Drafting |
-| After a table of contents draft: "좋아, 이대로 만들어줘", "5장이랑 6장만 바꿔서 만들어줘" | Making the book |
+| "쿠버네티스 책 만들어줘", "○○ 책 목차 짜줘", "이 노트들로 책 만들어줘", "make me a book on X" | Drafting the table of contents |
+| "○○ 책으로 공부하고 싶어", "○○에 대한 책 보고 싶어", "I want to learn X from a book" - neither making one nor Tilnote is mentioned | Ask once: "읽을 만한 책을 추천해 드릴까요, 아니면 수준에 맞춘 책을 틸노트에 만들어 드릴까요?" If the reader's level or goal is open in a way that changes the book, put that choice in the same message ("만든다면 ① 처음 배우는 입문서 ② 실무에 바로 쓰는 책 중 어느 쪽인지도 알려 주세요"). Recommendations → answer normally, without this skill. Made → Drafting |
+| After a table of contents draft: "좋아, 이대로 만들어줘", "5장이랑 6장만 바꿔서 만들어줘", "Looks good, make it" | Making the book |
 | After a draft of chapters to add to an existing book: "좋아", "추가해줘" | Changing the table of contents → continuing an existing book (never `create_book`) |
-| "내 책 보여줘", "Git 책 목차 보여줘", "책 어디까지 썼지?" | Browsing books |
-| "3장 보여줘", "다음 장", "Git 책 이어서 읽자" | Showing a chapter |
-| "남은 장 다 써줘", "Git 책 남은 장 이어서 써줘" | Writing several chapters |
+| "내 책 보여줘", "Git 책 목차 보여줘", "책 어디까지 썼지?", "show me my books" | Browsing books |
+| "3장 보여줘", "다음 장", "Git 책 이어서 읽자", "show me chapter 3", "next chapter", "keep reading my Git book" | Showing a chapter |
+| "남은 장 다 써줘", "Git 책 남은 장 이어서 써줘", "write the remaining chapters" | Writing several chapters |
 | While reading: "이 부분 이해 안 돼", "예시 하나 더" | Questions while reading |
 | "장 하나 추가해줘", "4장은 빼줘", "3장 내용 바꿔줘", "순서 바꿔줘" | Changing the table of contents |
-| "책 제목 바꿔줘", "책 소개 바꿔줘" | `update_book` with the book's id - the end of the 목차 노트's `책:` address ("Find the book and the 목차 노트", steps 1-2), or from `list_books` for a book made on the web - and only what changes: `title`, or a `description` as in "Making the book" step 4. When they didn't give the new text, suggest it and change it on a yes. For a new title, also rename the 목차 노트 to `"<새 제목>" 목차` (`edit_note` with `title`, and in the same call `replace` the old title in its `> [!NOTE]` line's sample sentence); the book's tag stays as it is. On a published book, say the new text is public right away. |
+| "책 제목 바꿔줘", "책 소개 바꿔줘" | `update_book` with the book's id - the end of the 목차 노트's `책:` address ("Find the book and the 목차 노트", steps 1-2), or from `list_books` for a book made on the web - and only what changes: `title`, or a `description` as in "Making the book" step 4. When they didn't give the new text, suggest it and change it on a yes. For a new title, also rename the 목차 노트 to `"<새 제목>" 목차` (`"<New title>" contents` when the note's title ends in `contents`; `edit_note` with `title`, and in the same call `replace` the old title in its `> [!NOTE]` line's sample sentence); the book's tag stays as it is. On a published book, say the new text is public right away. |
 
 ## Drafting the table of contents
 
@@ -99,11 +107,13 @@ In short:
      the 목차 노트"), say where it stands (chapters written, the first `⬜`), and offer
      that chapter. Draft new chapters only for something the 목차 doesn't cover - only
      those chapters, in the 목차 노트's brief and style, keeping the book's title, each
-     with where it goes ("4장 다음") - and ask `이 장들을 "…" 목차에 더할까요?` instead
+     with where it goes ("4장 다음") - and ask `이 장들을 "…" 목차에 더할까요?`
+     (`Add these chapters to the contents of "…"?`) instead
      of "이대로 책을 만들까요?". If you
      already asked the recommend-or-make question, don't ask again: draft the
      new book and put one line at the top of the draft, `이미 "…" 책이 있어요. 그
-     책을 이어 읽으시려면 "'…' 이어서 읽자"라고 해 주세요.` Without a 목차 노트, the
+     책을 이어 읽으시려면 "'…' 이어서 읽자"라고 해 주세요.` (`You already have a book,
+     "…". To keep reading it, say "Keep reading '…'".`) Without a 목차 노트, the
      book was made another way and can't be continued here; mention it, make a new
      one, and use its pages as material like any other note. Either way, a book
      already on the subject doesn't steer the new one - people read a subject again.
@@ -134,7 +144,9 @@ In short:
 5. **Show the draft** in one message, in the shape in
    [references/toc-research.md](references/toc-research.md), and ask: "이대로 책을
    만들까요? 빼거나 더할 장, 순서, 깊이를 말씀해 주세요. 전체 방향이 다르면 그것도
-   말씀해 주세요."
+   말씀해 주세요." (In English: "Shall I make the book like this? Tell me any chapters
+   to drop or add, and changes to the order or depth. If you had a different direction
+   in mind, tell me that too.")
 
 Nothing is created in Tilnote while drafting. Adjust on feedback and show what changed;
 show the whole draft again only after big changes. A new direction is a new draft:
@@ -166,10 +178,11 @@ On a clear yes to a draft. A yes that comes with small changes ("좋아, 5장이
    becomes the public blurb if the user publishes the book (`update_book` can change it
    later, and on a published book the change is public at once), so mention nothing
    private (not the 목차 노트). The book is private.
-5. **The 목차 노트.** `create_note` titled `"<책 제목>" 목차`, with the tags
+5. **The 목차 노트.** `create_note` titled `"<책 제목>" 목차` (`"<Book title>" contents`
+   in English), with the tags
    `["<책 태그>", "tilnote-book-toc"]` and `aiGenerated: true`, in the shape in [references/toc-note.md](references/toc-note.md),
-   starting with the `책:` line holding the `url` that `create_book` returned. Every
-   chapter is `⬜ 아직 안 씀`.
+   starting with the `책:` (`Book:`) line holding the `url` that `create_book` returned. Every
+   chapter is `⬜ 아직 안 씀` (`⬜ not written yet`).
 6. `add_page_to_book` with the 목차 노트. It is the book's first page; chapters come
    after it.
 7. **Write no chapter yet**, and make no other notes or pages.
@@ -241,7 +254,8 @@ table of contents to pick a chapter from. Nothing is written here.
    matches the user's words. A loose name ("Git 책") is fine when only one matches; if
    two could match, ask which. If none matches, `list_books`: when the matching book's
    first page (`get_book`) is one of those 목차 노트, the book was renamed on the web -
-   use it, and offer once to rename the note to `"<새 제목>" 목차` (`edit_note` with
+   use it, and offer once to rename the note to `"<새 제목>" 목차` (`"<New title>"
+   contents` when the note's title ends in `contents`; `edit_note` with
    `title` and `operations: []`). Otherwise go to step 3.
    `get_note` the 목차 노트; its `책:` line gives the book, and its other tag (not
    `tilnote-book-toc`) is the book's tag.
@@ -384,8 +398,11 @@ If the asked chapter builds on chapters not written yet, write it anyway: the us
 asked for it. Its opening explains, in a sentence or two, the idea it assumes - not
 just where it is covered - worded so it still reads naturally once those chapters
 exist (`브랜치는 커밋에 붙은 이름표이고, HEAD는 지금 내가 선 자리를 가리켜요. 자세한
-건 "브랜치는 이름표일 뿐이다"에서 다뤄요.`). Never write "먼저 쓴 장이라" or similar notes
-about how the book is being made. Don't write the other chapters unasked.
+건 "브랜치는 이름표일 뿐이다"에서 다뤄요.` - in English, `A branch is a label on a
+commit, and HEAD points to where you are now. "Branches are just labels" covers this in
+detail.`). Never write "먼저 쓴 장이라" ("since this chapter was written ahead of the
+others") or similar notes about how the book is being made. Don't write the other
+chapters unasked.
 
 ## Writing several chapters
 
@@ -478,3 +495,24 @@ a rewrite; name the fixed chapters in the report.
   `publish_note`. Publishing a book is done on the web when the user wants to; the
   publish window leaves the 목차 노트 unchecked, so it stays private unless they tick
   it.
+
+## Fixed lines in English
+
+For a user who doesn't write in Korean, the fixed lines above read:
+
+| Where | In English |
+|---|---|
+| Recommend or make (routing table) | "Shall I recommend some books to read, or make you a book at your level in Tilnote?" - with the level choice: "If I make one, also tell me which kind: ① a first introduction ② a practical book for work." |
+| Making the book, report | `I made the book "…". It's private.` / `- Book: …` / `- Contents: …` / `For now the book has only the contents page, with each chapter's plan. Say "Show me chapter 1" and I'll write it then and put it in the book. You don't have to read the chapters in order.` / `(I swapped chapters 5 and 6.)` / `Shall we start with chapter 1?` |
+| Browsing, one line per book | `1. "…" — 3 of 8 chapters written · next: Chapter 3 "…"` (none written: `none of 6 written yet · next: Chapter 1 "…"`) |
+| Browsing, a book made on the web | `The book "…" was made on the web and has no contents note, so I don't write its chapters here.` |
+| Browsing, a book's contents | `Contents of "…". 3 of 8 chapters written.` / `- Book: …` / `- Contents note (each chapter's plan): …` / each chapter `✅` or `— not written yet` / `Tell me which chapter you'd like to read, by number or title. If it's written, I'll show it right away; if not, I'll write it then and put it in the book.` / several books: `For another book's contents, tell me its name.` |
+| No contents note (Find, step 3) | `This book was made without a contents note, so I can't continue its chapters here.` |
+| A written chapter | `Chapter 2 "…" was written on Oct 27.` / `Chapter 3 "…" isn't written yet. Say "next" and I'll write it.` |
+| Before writing | `I'm writing chapter 3 now. It takes a minute or two.` |
+| After writing | `I wrote chapter 3 "…" and put it in the book.` / `Next is chapter 4 "…". Say "next" and I'll write it.` |
+| Chapters before it unwritten | `Chapters 3 and 4 aren't written yet, so in the book it comes right after "…". They go in between when they're written. To fill the gap first, say "Show me chapter 3".` |
+| Next chapter already written | `Next is chapter 4 "…", already written (link). The next chapter not written yet is chapter 5.` |
+| Published book | `The book is public, so readers can't see this chapter yet. To show it, open the book's publish window on the web and tick this chapter.` |
+| Stopping after four | `To pick up from here in a new conversation, say "Write the remaining chapters of '<Book title>'".` |
+| Questions while reading | `Shall I add this explanation to chapter 3?` |

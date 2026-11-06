@@ -69,8 +69,8 @@ SVG does not wrap text. Every line is its own `<tspan>` with its own `x` and `y`
 ```
 
 Slots: a small label (top), the title (2-3 lines), a rule, 2-3 key points from the
-post, a footer. Keep the bottom 100px clear - Instagram's grid crops portrait cards
-toward the middle.
+post, a footer ("Full post: link in bio" on an English card). Keep the bottom 100px
+clear - Instagram's grid crops portrait cards toward the middle.
 
 ## A 카드뉴스 set (3-6 cards)
 
@@ -80,7 +80,7 @@ Same canvas, same colours, same margins on every card:
 2. **One point per card** - a big line (the point, 64-72px, up to 3 lines) and one or
    two small lines (40-42px) explaining it. Number them in the label ("1/3").
 3. **Last card** - one line of what the post adds ("설치부터 결과까지") and
-   "전체 글은 프로필 링크에서".
+   "전체 글은 프로필 링크에서" ("Full post: link in bio" in English).
 
 Points come from the post in its order. A card set is not the place for anything the
 post doesn't say.

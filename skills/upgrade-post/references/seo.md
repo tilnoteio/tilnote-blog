@@ -34,9 +34,9 @@ answers quote the start of a page; a post that opens with background loses both.
 
 ## Dates on facts that move
 
-- Prices, versions, limits, release status, policies: put "2026년 10월 기준" (the
-  current month) next to them, or once near the top if the whole post is
-  time-sensitive.
+- Prices, versions, limits, release status, policies: put "2026년 10월 기준" ("as of
+  October 2026" in English - the current month) next to them, or once near the top
+  if the whole post is time-sensitive.
 - Name versions: "Ollama 0.x" rather than "최신 버전".
 
 ## Summary - Tilnote's 3줄 요약 (`summary` in create_note, update_note, publish_note)

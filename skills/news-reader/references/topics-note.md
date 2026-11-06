@@ -109,7 +109,7 @@ them, and still finds it as `### 로컬 LLM (쉬는 중)` - as long as the call 
 | `토픽당` | `Per topic` | Items per topic, 1-5 | `3건` / `3 items` |
 | `기간` | `Window` | How far back a run looks | since the last run; 2 days the first time; never more than 7 days |
 | `결과 저장` | `Save results` | `[뉴스] 노트에 저장` or `저장 안 함` / `save as a [News] note` or `don't save` | save |
-| `시간대` | `Time zone` | The time zone of every date and time the reader writes - the briefing's dates, its title, the window, `마지막으로 돌린 때`. An IANA name (`America/New_York`) or a city | `한국 시간` - a Korean note usually has no such line. An English note without one: the time zone the app shows you, else UTC |
+| `시간대` | `Time zone` | The time zone of every date and time the reader writes - the briefing's dates, its title, the window, `마지막으로 돌린 때` - and of "today" and "yesterday" when the user names a past briefing. An IANA name (`America/New_York`) or a city | `한국 시간` - a Korean note usually has no such line. An English note without one: the time zone the app shows you, else UTC |
 | `마지막으로 돌린 때` | `Last run` | `YYYY-MM-DD HH:mm (<time zone>)` of the last run that finished - `(한국 시간)` in a Korean note | `(아직 없음)` / `(not yet)` |
 
 The section headings are `## 토픽` / `## Topics`, `## 돌리는 방법` / `## How it runs` and

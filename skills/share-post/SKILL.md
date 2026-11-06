@@ -27,6 +27,9 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
      address, only when you have it, where the network's version takes one; no window
      links - every block is copied and pasted. End with one line:
      > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 글자 수는 틸노트가 재고, 글이 채워진 채 열리는 공유 링크와 어디서 독자가 왔는지 보이는 링크도 만들어 드려요.
+
+     In English:
+     > Connect Tilnote (`https://tilnote.io/mcp`) and Tilnote will count the lengths for you, and make share links that open with your text filled in and links that show where readers came from.
    - **Otherwise** - a post they name by title or time ("어제 올린 글"), or a private
      one to publish first → say in one line that Tilnote isn't connected yet and where
      to connect it (the app's connection settings, `/mcp` in a terminal app, address
@@ -42,10 +45,11 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
    they said, ask which.
 3. `get_note` it. You need its text: every line you write comes from it.
 4. **It must be published** (`published: true`). If it isn't, the link won't open for
-   anyone: "이 글은 아직 비공개라 링크를 열 수 없어요. 먼저 공개할까요?" Publishing
-   follows the usual rules - a summary, tags, a cover and a clear yes. In the same
-   message, show the summary and tags you would pass, so one yes covers them. After
-   the yes, when `get_note` shows no cover (`Cover: none` in its text, or
+   anyone: "이 글은 아직 비공개라 링크를 열 수 없어요. 먼저 공개할까요?" (in English:
+   "This post is still private, so the link won't open for anyone. Publish it first?")
+   Publishing follows the usual rules - a summary, tags, a cover and a clear yes. In
+   the same message, show the summary and tags you would pass, so one yes covers
+   them. After the yes, when `get_note` shows no cover (`Cover: none` in its text, or
    `thumbnailUrl: null` in its data) and the post has no photo of the user's own,
    draw the cover as in [references/cover.md](references/cover.md), without asking -
    a cover you can see stays; then `publish_note` with the same `pageId`, the
@@ -123,11 +127,11 @@ How to post it goes by the network, not by the flags alone - Naver Blog reports
 
 | Network | What the block holds | How to post it |
 |---|---|---|
-| Threads (one post), X, Bluesky, Band | Your text, no link | `[눌러서 열기](shareUrl)` - "글과 링크가 채워진 창이 열려요. 확인하고 올리시면 돼요." |
-| Threads thread (several posts) | One block per post - see below | `[1번 글 열기](shareUrl)` |
-| Naver Blog | The summary only, no link | `[눌러서 열기](shareUrl)` - "링크와 제목이 채워진 창이 열려요. 요약은 복사해서 붙여 넣으세요." |
-| KakaoTalk, LinkedIn, Facebook | Your text with the kit's tracked `link` where [references/networks.md](references/networks.md) puts it | "복사해서 붙여 넣기" - the block holds everything. No window link, even though LinkedIn and Facebook return a link-only `shareUrl` |
-| Instagram | The caption, no link (it isn't clickable) - "프로필 링크" wording | "복사해서 붙여 넣기", and put the tracked `link` in the profile or a story link |
+| Threads (one post), X, Bluesky, Band | Your text, no link | `[눌러서 열기](shareUrl)` - "글과 링크가 채워진 창이 열려요. 확인하고 올리시면 돼요." (in English: `[Open to post](shareUrl)` - "Opens with your text and the link filled in. Check it and post.") |
+| Threads thread (several posts) | One block per post - see below | `[1번 글 열기](shareUrl)` (in English: `[Open post 1](shareUrl)`) |
+| Naver Blog | The summary only, no link | `[눌러서 열기](shareUrl)` - "링크와 제목이 채워진 창이 열려요. 요약은 복사해서 붙여 넣으세요." (in English: `[Open to post](shareUrl)` - "Opens with the link and title filled in. Copy and paste the summary.") |
+| KakaoTalk, LinkedIn, Facebook | Your text with the kit's tracked `link` where [references/networks.md](references/networks.md) puts it | "복사해서 붙여 넣기" ("Copy and paste" in English) - the block holds everything. No window link, even though LinkedIn and Facebook return a link-only `shareUrl` |
+| Instagram | The caption, no link (it isn't clickable) - "프로필 링크" ("link in bio" in English) wording | "복사해서 붙여 넣기" ("Copy and paste"), and put the tracked `link` in the profile or a story link |
 
 Any link you write is the kit's `link` for that network, never the bare post address.
 Add a tip from `tips`, in the user's language and in one line, only if it tells the
@@ -141,7 +145,9 @@ the only place the link goes. The share link opens post 1 **without** a link; th
 rest are posted as replies to it, one by one, copied from the blocks. Say it in one
 or two lines: "1번 글은 링크
 없이 열려요. 올린 다음 2번부터 1번 글에 답글로 하나씩 붙여 넣으세요. 링크는 마지막
-글 끝에 넣었어요." A single Threads post is not a thread: its share window attaches
+글 끝에 넣었어요." (in English: "Post 1 opens without the link. Once it's up, paste
+posts 2 onward as replies to post 1, one at a time. The link is at the end of the
+last post.") A single Threads post is not a thread: its share window attaches
 the link, so its block has no link.
 
 Don't reprint the blog post, and don't explain each choice. End with at most one

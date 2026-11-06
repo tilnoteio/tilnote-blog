@@ -4,8 +4,8 @@ When the user asks about one feature, answer in three or four lines: what it doe
 what it keeps in their Tilnote, one sentence to say. Use your own words in their
 language; the Korean below is what the features actually say and save (for an
 English-speaking user, the English sentences in SKILL.md's table and the English note
-names: `My writing style`, `My news topics`, `[News] ...`, `[Idea] ...`). Then ask
-whether to try it.
+names: `My writing style`, `My news topics`, `[News] ...`, `[Idea] ...`,
+`"<Book title>" contents`). Then ask whether to try it.
 
 Everything here lives in the user's own Tilnote account as notes they can open, edit
 and delete at tilnote.io. Because it lives there, any AI app with this plugin and
@@ -21,7 +21,7 @@ Tilnote can pick up where they stopped.
 - Checks first whether they already published a post on the topic, and offers a
   follow-up or an update instead of a duplicate.
 - Keeps: the draft as a private note; a `[글 아이디어] ...` note when they stop midway, so
-  they can continue later. Published only when they say "올려".
+  they can continue later. Published only when they say "올려" ("publish it").
 - Their own photos and screenshots: it gives a link where they upload them from
   their phone or computer, then puts them in the post where they fit.
 - Say: "○○에 대해 블로그 글 써 보고 싶어", "이거 글로 정리해서 올려줘", "어제 그 글 아이디어 이어서",
@@ -94,8 +94,8 @@ Tilnote can pick up where they stopped.
 - A book they want to read. Researches how the subject is usually taught, what
   changed recently and where people get stuck, looks at their notes, and drafts a
   table of contents for their level. Nothing is saved until they approve it.
-- On yes: a private book whose first page is the note `"<책 제목>" 목차` (each
-  chapter's plan and status). A chapter is written when they pick it - from the
+- On yes: a private book whose first page is the note `"<책 제목>" 목차`
+  (`"<Book title>" contents` in English; each chapter's plan and status). A chapter is written when they pick it - from the
   table of contents or by name - and goes into the book at its place. They read it on
   the book's page in Tilnote (the `/users/books/...` link). Publishing the book is
   their call, on the web; the 목차 note stays private unless they tick it.
