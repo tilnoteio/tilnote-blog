@@ -26,7 +26,7 @@ where you use this plugin, right where you stopped.
 | `share-post` | Turns a published post into versions for Threads, X, LinkedIn, Facebook, Bluesky, KakaoTalk, Band, Naver Blog and Instagram, with a link that opens the network's post window already filled in where the network allows it (Threads, X, Bluesky, Band) and ready-to-paste text for the rest. Can draw a card image | "Turn this post into a Threads post", "Write a LinkedIn post for it", "Make Instagram cards from this post" |
 | `news-reader` | Keeps the topics you follow in one private note, `My news topics`. When you run it, the AI researches recent news on them and gives you a short briefing - source, date, why it matters, a post idea per item - saved as a private `[News]` note | "Set up my news topics", "Run my Tilnote news reader", "Add a topic on AI agents", "Save 3 as an idea" |
 | `make-book` | Makes a book you want to read. Researches how the subject is usually taught, what changed lately and where people get stuck, checks your notes, and drafts a table of contents for your level. On your OK it makes a private Tilnote book and a table of contents note with every chapter's plan; a chapter is written when you pick it from the contents or ask to see it | "Make me a book on Kubernetes", "I want to learn Git from a book", "Show me my books", "Show me chapter 3", "Next chapter" |
-| `next-post` | Shows how your posts are doing and suggests 2-3 next posts with a reason each, plus posts worth fixing | "How is my blog doing?", "What should I write next?", "Any posts I should fix?" |
+| `next-post` | Shows how your posts are doing and suggests 2-3 next posts with a reason each, plus posts whose facts may be out of date | "How is my blog doing?", "What should I write next?", "Any posts I should fix?" |
 | `writing-style` | Keeps your tone, favourite phrases and words you never use in one private note, `My writing style`, that the writing skills (write-post, upgrade-post, share-post) read before they write. If you write differently for different kinds of posts (a newsletter and a how-to post), it keeps a mode for each, and every post uses the one that fits | "Remember my writing style", "From now on, keep it casual", "Never use 'delve' in my posts", "Learn my newsletter voice separately" |
 
 ## Upgrades, in plain words
@@ -141,7 +141,8 @@ Then run `/mcp` and sign in to Tilnote.
 
 **Claude (web and desktop, paid plans)**: Customize → Plugins → Add → Add marketplace →
 `tilnoteio/tilnote-blog`. After adding the plugin, open its **Connectors** tab and
-sign in to Tilnote.
+sign in to Tilnote. A step-by-step guide with screenshots (in Korean):
+[guides/claude-web.md](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/claude-web.md).
 
 If you already added Tilnote as a custom connector, keep only one of the two enabled -
 otherwise you get two copies of the Tilnote tools.

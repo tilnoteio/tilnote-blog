@@ -118,7 +118,7 @@ after you uploaded them yourself:
    belongs with: `find` a short phrase from that paragraph, or its `target_id` from
    `get_note_blocks`. A private draft: put them in without asking. A published post:
    `preview_note_edit` the same operations, show where each goes in a line apiece
-   ("「설치」 절 둘째 문단 뒤") and ask "이대로 반영할까요?" ("Shall I apply these?")
+   (`"설치" 절 둘째 문단 뒤`) and ask "이대로 반영할까요?" ("Shall I apply these?")
    first - the change is live at once; on a yes, send those operations to `edit_note`.
 6. Reply in a line or two: how many pictures went where, in the post's own words -
    never a block id. Never reprint the post. A picture that fits nowhere → leave it

@@ -81,8 +81,9 @@ user's language:
      otherwise `한국어`. For an English-speaking user, `English`.
    - 시간대 / Time zone: for a non-Korean user, as in "The time zone, when registering"
      in [references/topics-note.md](references/topics-note.md).
-   - 메모: why they follow it, in their words, if they said. Otherwise `(없음)` - don't
-     invent a reason.
+   - 메모: why they follow it, in their words, if they said why. Otherwise `(없음)` -
+     don't invent a reason. A reason you put together yourself - from their posts,
+     their work or what the app remembers about them - is still invented.
    - If they gave no hint and two readings would differ a lot ("개발 소식" - frontend
      or AI?), ask one short question first. Otherwise don't ask - propose.
    - Up to 5 topics. If they want more, say that a run with more than five gets slow

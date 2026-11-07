@@ -1,6 +1,6 @@
 ---
 name: next-post
-description: Shows how the user's Tilnote blog posts are doing and suggests what to write next - 2-3 candidates, each with a one-line reason drawn from what readers responded to, private notes and idea notes not yet published, and their latest news briefings saved in Tilnote - plus published posts worth fixing (no summary or cover, facts that may be out of date). Use when the user asks about their own blog - "내 글 조회수 어때", "반응 좋은 글 뭐야", "블로그에 다음에 뭐 쓰지", "블로그 글 아이디어 추천해줘", "블로그 주제 뭐가 좋을까", "블로그 점검해줘", "손볼 글 있어?", "how is my blog doing", "what should I write next", "any posts I should fix?". Not for topic ideas unrelated to their blog (a school essay, a report, a talk). Once a candidate is chosen, the post itself is written with write-post; a post worth fixing is upgraded with upgrade-post.
+description: Shows how the user's Tilnote blog posts are doing and suggests what to write next - 2-3 candidates, each with a one-line reason drawn from what readers responded to, private notes and idea notes not yet published, and their latest news briefings saved in Tilnote - plus published posts whose facts may be out of date. Use when the user asks about their own blog - "내 글 조회수 어때", "반응 좋은 글 뭐야", "블로그에 다음에 뭐 쓰지", "블로그 글 아이디어 추천해줘", "블로그 주제 뭐가 좋을까", "블로그 점검해줘", "손볼 글 있어?", "how is my blog doing", "what should I write next", "any posts I should fix?". Not for topic ideas unrelated to their blog (a school essay, a report, a talk). Once a candidate is chosen, the post itself is written with write-post; a post worth fixing is upgraded with upgrade-post.
 ---
 
 # What to write next (다음 글 찾기)
@@ -84,26 +84,26 @@ Aim for different sources, not three variations of one:
 
 ## 3. Posts worth fixing (손볼 글)
 
-On every run, check the top three posts from the stats for a missing summary or
-cover (below) - that costs three reads. The full check-up runs only when the user
-asked for one ("블로그 점검해줘", "손볼 글 있어?"): look at up to five posts from the
-stats' top 10 - the top three, and the ones published more than about six months ago
-whose titles name versions, prices, tools, "정리" or "최신", the likeliest to be out
-of date. After the `days: 365` fallback the top 10 holds only the last year's posts;
-say the check-up covered those.
+A post is worth fixing when a fact in it may have moved - a price, a version, a limit
+or a "최신" thing that was true when it was written. A missing summary or cover is not
+a reason: without a summary the search description is the post's opening, cut at the
+same length a summary would be, and without a cover the share card shows the title.
+Don't list either; upgrade-post fills them when it upgrades a post.
 
-- **No summary or cover:** `get_share_kit` with just the `pageId` returns its
-  `summary` and `imageUrl`. An empty `summary` means search engines show a cut-off
-  slice of the body; an `imageUrl` on `https://tilnote.io/api/og?...` means no cover,
-  so share cards fall back to plain text.
-- **Facts that may have moved** (check-up only): posts published more than about six
-  months ago that state prices, versions, limits or "최신" things - `get_note` and
-  look. Name the sentence; if you can search, say what it is now, with a source.
+- **On every run:** among the stats' top three, a post published more than about a
+  year ago whose title names a version, a price, a year or "최신" - `get_note` it and
+  list it only if a sentence states such a fact. Usually there is none; then there is
+  no 손볼 글 section.
+- **The check-up**, only when the user asked for one ("블로그 점검해줘", "손볼 글
+  있어?"): `get_note` up to five posts from the stats' top 10 - the ones published
+  more than about six months ago whose titles name versions, prices, tools, "정리" or
+  "최신", the likeliest to be out of date. If you can search, say what the fact is now,
+  with a source. After the `days: 365` fallback the top 10 holds only the last year's
+  posts; say the check-up covered those. When it finds nothing, say so in one line.
 
-Up to three posts, one line each; when one post has several problems, they share its
-line. Fixing is upgrade-post's job: it re-checks the facts against sources, fills the
-summary and cover through a republish that keeps the date, and shows the changes to
-the post before they go live.
+Up to three posts, one line each, naming the sentence. Fixing is upgrade-post's job: it
+re-checks the facts against sources and shows the changes to the post before they go
+live.
 
 ## 4. Report
 
@@ -119,7 +119,7 @@ Short, in this order:
 3. MCP 원격 서버 인증, 무엇이 바뀌었나 - 10월 31일 뉴스 브리핑 소식, 지난 MCP 글과 이어져요
 
 손볼 글
-- [Next.js 도커 환경 변수](https://tilnote.io/pages/...) - 요약이 없어서 검색 결과에 본문 앞부분이 잘려 보여요
+- [Next.js 도커 환경 변수](https://tilnote.io/pages/...) - 작년 1월 글인데 "Next.js 14가 최신"이라는 문장이 있어서 지금과 다를 수 있어요
 
 어느 걸로 써 볼까요?
 ```
@@ -148,7 +148,7 @@ this week - that is where a first post comes from.
   post.
 - A private note or an idea note → write-post continues from that note.
 - A post to fix → upgrade-post, with what you found (the sentence that may be out of
-  date, the missing summary or cover).
+  date).
 
 If those skills aren't available, carry on yourself the same way: look it up (for a
 post about their own view or a story they lived that they haven't told yet, ask up to

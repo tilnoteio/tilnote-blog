@@ -85,7 +85,7 @@ that sentence better (a number, a date, a source) instead of adding a second one
 | A corrected fact | In place, in the sentence that held the old one |
 | Their result or experience | At the end of the section it is about - continuing its last paragraph when it carries on from it, otherwise (or when it starts with a month) as the next paragraph |
 | Their view | Where the post draws its conclusion - or the opening, if it is the point |
-| An answer to a reader's question | Where the question would come up while reading - but not inside a section that is the writer's own account (「써 보니」, 「후기」); next to it instead. A short FAQ only from questions the user asked, before `## 참고` |
+| An answer to a reader's question | Where the question would come up while reading - but not inside a section that is the writer's own account ("써 보니", "후기"); next to it instead. A short FAQ only from questions the user asked, before `## 참고` |
 | A new subtopic from a source | Its own section next to the one it relates to, before `## 참고` - only when it is more than a sentence or two |
 | A follow-up post's link | Near the top: "이후 바뀐 내용은 [○○](...)에 정리했다." (English: "What's changed since is covered in [○○](...).") |
 

@@ -25,11 +25,12 @@ is. Pick by what the user can get back afterwards.
   `edit_note`. There is no `confirm` or `save` field: the preview was the dry run,
   and `edit_note` always saves.
   "최신 내용으로 고쳐줘" is the upgrade - what you found comes first, as in SKILL.md.
-- Report what changed in the user's words ("4번째 문단 오타 2곳, 「설치 방법」 절 마지막
-  문장 바꿈"), not the text again - never a block id like `B7.k3f9x`. The result names
+- Report what changed in the user's words (`4번째 문단 오타 2곳, "설치 방법" 절 마지막
+  문장 바꿈`), not the text again - never a block id like `B7.k3f9x`. The result names
   each place in English (`paragraph 4 under "설치 방법"`, `list item 2 under "준비물"`,
-  `the heading "설치"`, `the title`); say it the user's way: 「설치 방법」 절 넷째 문단,
-  「준비물」 목록 둘째 줄, 「설치」 소제목, 글 제목.
+  `the heading "설치"`, `the title`); say it the user's way, section names in double
+  quotes (never 「」): "설치 방법" 절 넷째 문단, "준비물" 목록 둘째 줄, "설치" 소제목,
+  글 제목.
 - "방금 고친 거 되돌려줘" → the `edit_note` result says how to undo each change (a text
   change: `find` = its after, `content` = its before). Further back → "Go back to an
   earlier version" below.

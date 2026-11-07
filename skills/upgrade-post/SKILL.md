@@ -205,9 +205,9 @@ details wait for the conversation:
 독자가 물어볼 만한데 글에 없는 것
 - "유료로 바꾸면 뭐가 달라져요?" - 글은 무료 얘기에서 끝나요
 작성자님만 말할 수 있는 것
-- 지금도 무료로 쓰세요? 한 줄 주시면 「써 보니」에 넣을게요.
+- 지금도 무료로 쓰세요? 한 줄 주시면 "써 보니"에 넣을게요.
 
-넣는다면: 한도 문장은 날짜·출처를 붙여 고치고, 새 기능은 「무료로 되는 것」에 한 줄, 끝에 무료·유료 차이 한 문단. 요약이 없고 나중에 쓰신 [ChatGPT 유료 한 달 써 본 후기](https://tilnote.io/pages/...)로 가는 링크도 없어서 같이 챙길게요.
+넣는다면: 한도 문장은 날짜·출처를 붙여 고치고, 새 기능은 "무료로 되는 것"에 한 줄, 끝에 무료·유료 차이 한 문단. 요약이 없고 나중에 쓰신 [ChatGPT 유료 한 달 써 본 후기](https://tilnote.io/pages/...)로 가는 링크도 없어서 같이 챙길게요.
 이대로 넣을까요?
 ```
 
@@ -290,8 +290,8 @@ at its place ([references/upgrade.md](references/upgrade.md) has where each kind
   "Fixing, taking down, going back".
 
 After an addition, reply in a line or two: what went where, in the user's words
-("「설치」 절 끝에 넣었어요"), the sentence itself when you wrote one or two - never a
-block id, never the whole post. The first time, add "마음에 안 들면 바로 되돌릴게요."
+(`"설치" 절 끝에 넣었어요` - section names in double quotes, never 「」), the sentence
+itself when you wrote one or two - never a block id, never the whole post. The first time, add "마음에 안 들면 바로 되돌릴게요."
 ("If you don't like it, I can undo it right away.")
 
 ### 4. Tidy (정리하기) - keep it readable, show how it grew
@@ -323,8 +323,8 @@ Then report how the post grew - not the text, the post has it:
 ```text
 이 글이 이렇게 자랐어요. [글 보기](https://tilnote.io/pages/...)
 - 낡은 사실 1곳을 최신으로 (2026년 11월 기준, 출처 달음)
-- 「무료로 되는 것」에 새 기능 한 줄, 끝에 무료·유료 차이 한 문단
-- 작성자님 말 1곳: 「써 보니」 끝에 "(2026년 11월) 요즘은 초안만 무료로 쓰고 나머지는 직접 한다"
+- "무료로 되는 것"에 새 기능 한 줄, 끝에 무료·유료 차이 한 문단
+- 작성자님 말 1곳: "써 보니" 끝에 "(2026년 11월) 요즘은 초안만 무료로 쓰고 나머지는 직접 한다"
 - 출처 0 → 3개, 요약 새로, 후속 글 링크
 마음에 안 드는 곳은 말씀하시면 고치거나 이전 판으로 되돌릴게요.
 ```
@@ -390,9 +390,9 @@ The rows above the upgrade.
   Give the polished text in the chat (a `text` block they can copy), the change list,
   and one offer: "틸노트에 저장해 둘까요?" ("Want me to save it in Tilnote?")
 - **For a note, report the changes, not the text** - the note has it - with places in
-  the user's words ("3문단", "「설치 방법」 절"), never block ids: the result's
-  `paragraph 3 under "설치 방법"` is "「설치 방법」 절 셋째 문단". Three to seven
-  lines, then the questions, then the link:
+  the user's words (`3문단`, `"설치 방법" 절` - section names in double quotes, never
+  「」), never block ids: the result's `paragraph 3 under "설치 방법"` is
+  `"설치 방법" 절 셋째 문단`. Three to seven lines, then the questions, then the link:
 
   > 다듬었어요. [노트 열기](https://tilnote.io/home?pages=...)
   > - 첫 문장 "~에 대해 알아보겠습니다" → 문제부터 꺼내도록 바꿈

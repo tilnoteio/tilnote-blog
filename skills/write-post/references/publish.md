@@ -98,7 +98,7 @@ published post changes live at once:
 
 - "고쳐줘" → `edit_note` on the published note: a typo or a word → `find` with a short
   phrase around it; a whole paragraph → `target_id` from `get_note_blocks`. Report what
-  changed and where in the user's words ("「설치 방법」 절 둘째 문단"), not the text
+  changed and where in the user's words (`"설치 방법" 절 둘째 문단`), not the text
   again and never a block id. The fix is live at once - no need to publish again. Apply
   straight away only what the user spelled out (a typo, a sentence they gave); for new
   wording of your own, `preview_note_edit` the operations first, show what will change
