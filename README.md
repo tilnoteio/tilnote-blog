@@ -1,7 +1,7 @@
 # Tilnote Blog
 
 Write blog posts together with AI and publish them to your [Tilnote](https://tilnote.io)
-blog - then share them, and find the next one.
+blog - then grow them in conversation, share them, and find the next one.
 
 Give the AI a topic and it looks it up and writes the post, without asking you
 anything first (for a post about your own view or a story you lived, it first asks up
@@ -22,12 +22,54 @@ where you use this plugin, right where you stopped.
 |---|---|---|
 | `start` | Shows you around: checks the Tilnote connection and where your account stands, lists what you can ask for with a sentence to say for each, and suggests one first step. Saves nothing | "Where do I start?", "What can you do?", "How do I use this?" |
 | `write-post` | Look it up → write the draft and explain the topic in a few lines (a full explanation first if you ask) → publish on your OK. Checks your blog for an earlier post on the topic first, follows a shape that fits the kind of post, cites sources as footnotes, and makes it easy to find in search. Draws a cover image when it publishes. Your own photos and screenshots come in through an upload link and go where they fit | "I'd like to write a blog post about local LLMs", "Turn this conversation into a post", "Continue my idea from yesterday", "Let's write about news item 2", "I want to add a screenshot to this post" |
-| `upgrade-post` | Makes a post you already have better and keeps it yours. Light: spelling, or polishing in your own voice. Full: a conversation that grows the post - first what changed since it went up (checked against sources and dated) and what readers would ask; then your questions, the sources you bring and what you've tried since go in where they belong; then it's tidied, with summary, cover image and links to your related posts, and you see how it grew. What you ask to put in goes straight in, even on a live post (Tilnote keeps earlier versions for 30 days, so you can go back); what the AI suggests on its own is offered first (on a private draft it goes in, and you take out what you don't want). Always the same note. Also takes a post down or restores an earlier version | "Upgrade this post", "Bring my old post up to date", "Add this article to my post", "Polish this and publish it", "Take that post down", "Go back to the earlier version" |
+| `upgrade-post` | Makes a post you already have better and keeps it yours. Light: spelling, or polishing in your own voice. Full: a conversation that keeps growing the one post ([how it works](#upgrades-in-plain-words)). Also adds your own photos, takes a post down or restores an earlier version | "Upgrade this post", "Polish this post", "Add this article to my post", "What does this part mean?", "Take that post down", "Go back to the earlier version" |
 | `share-post` | Turns a published post into versions for Threads, X, LinkedIn, Facebook, Bluesky, KakaoTalk, Band, Naver Blog and Instagram, with a link that opens the network's post window already filled in where the network allows it (Threads, X, Bluesky, Band) and ready-to-paste text for the rest. Can draw a card image | "Turn this post into a Threads post", "Write a LinkedIn post for it", "Make Instagram cards from this post" |
 | `news-reader` | Keeps the topics you follow in one private note, `My news topics`. When you run it, the AI researches recent news on them and gives you a short briefing - source, date, why it matters, a post idea per item - saved as a private `[News]` note | "Set up my news topics", "Run my Tilnote news reader", "Add a topic on AI agents", "Save 3 as an idea" |
 | `make-book` | Makes a book you want to read. Researches how the subject is usually taught, what changed lately and where people get stuck, checks your notes, and drafts a table of contents for your level. On your OK it makes a private Tilnote book and a table of contents note with every chapter's plan; a chapter is written when you pick it from the contents or ask to see it | "Make me a book on Kubernetes", "I want to learn Git from a book", "Show me my books", "Show me chapter 3", "Next chapter" |
 | `next-post` | Shows how your posts are doing and suggests 2-3 next posts with a reason each, plus posts worth fixing | "How is my blog doing?", "What should I write next?", "Any posts I should fix?" |
 | `writing-style` | Keeps your tone, favourite phrases and words you never use in one private note, `My writing style`, that the writing skills (write-post, upgrade-post, share-post) read before they write. If you write differently for different kinds of posts (a newsletter and a how-to post), it keeps a mode for each, and every post uses the one that fits | "Remember my writing style", "From now on, keep it casual", "Never use 'delve' in my posts", "Learn my newsletter voice separately" |
+
+## Upgrades, in plain words
+
+An upgrade doesn't finish a post once - it keeps growing the same post in
+conversation. What you learn, what readers would ask and what you've tried since end up
+in the post instead of scattered across chats.
+
+```text
+understand → [ talk ⇄ add ] → tidy
+```
+
+1. **Understand**: say "Upgrade this post" and the AI reads it, looks things up and
+   tells you, in about a phone screen, what changed since it went up (checked against
+   the sources, with dates), what readers would ask that the post doesn't cover, and
+   the one question only you can answer ("Do you still use the free plan?"). It says
+   how it would add them and asks for the go-ahead. If the post still holds up, it
+   says so.
+2. **Talk and add**: then it's a conversation. Ask about the post ("What does this
+   part mean?") and it answers - and, once, offers to add the answer if readers would
+   want it too. Hand it an article, release notes or one of your notes ("Add this to
+   my post") and it sets it against the post: what's new goes in, what contradicts it
+   is corrected. Tell it what you tried or what you think, and it goes in, in your
+   words, at the place it's about. What you give goes in as you give it, so nothing is
+   lost if the chat ends there.
+3. **Tidy**: it reads the grown post again, folds repeats together, moves what landed
+   at the end to where it belongs, takes care of the summary, footnotes, links to your
+   related posts and a cover, then shows how the post grew (one fact brought up to
+   date, your words added in one place, sources 0 → 3).
+
+When news comes out or you try something new, go round again with the same post. It
+is always the same note - never a copy.
+
+- **Who decides:** what you ask to put in goes straight in, even on a live post. What
+  the AI finds on its own is offered first (on a private draft it goes in, and you
+  take out what you don't want). Rewording your own sentences on a live post is shown
+  first.
+- **Undo:** Tilnote keeps earlier versions for 30 days, so "Go back to the earlier
+  version" works.
+- **Your voice, your experience:** what it adds is written in your voice (your writing
+  memo). It never makes up a result, an experience or a view you didn't give.
+- **One post at a time:** "Upgrade all my old posts" still goes one by one, starting
+  with the most-read - rewriting a whole blog at once is what spam checks watch for.
 
 ## The news reader, in plain words
 
@@ -132,7 +174,8 @@ To look around on your own, this order works well:
 3. **"Turn it into a Threads post"**: turns the published post into social posts, with share links
    (filled in where the network allows it). You post them yourself.
 
-If you want a particular tone, keep it in the writing memo: state it ("From now on,
+If you already have posts, try "Upgrade this post" on one of them. If you want a
+particular tone, keep it in the writing memo: state it ("From now on,
 keep it casual"), or, if you have posts you wrote yourself, say "Remember my writing
 style" to learn it from them. Try the news reader ("Set up my news topics") and books
 ("Make me a book on <topic>") on their own.
