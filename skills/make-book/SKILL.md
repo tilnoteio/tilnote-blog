@@ -57,27 +57,39 @@ line - `Running example:` in a note with English labels).
 ## Before anything else
 
 1. Check that the Tilnote tools are there. If not:
+   - **Where to connect** - name only the place in the app you are in:
+     - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+       연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+       https://claude.ai/customize/plugins - just that, in one line. Only if they then
+       say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+       Enterprise plan an Owner adds it.
+     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - Another app: its connector settings.
+
+     The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+     say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+     "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+     lines below is that place.
    - **They only said they want to study or read about a subject** ("○○ 책으로 공부하고
      싶어") → answer normally with books to read, and end with one line:
-     > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 수준에 맞춘 책을 만들어 드릴 수 있어요.
+     > 틸노트를 연결하면(`<연결하는 곳>`) 수준에 맞춘 책을 만들어 드릴 수 있어요.
 
      In English:
-     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can make you a book at your level.
+     > Connect Tilnote (`<where to connect>`) and I can make you a book at your level.
    - **A new book or its table of contents** ("쿠버네티스 책 만들어줘", "○○ 책 목차
      짜줘") → draft the table of contents in the chat as in "Drafting the table of
      contents", steps 2-5 - no notes to look in and no tags to check - and instead of
      "이대로 책을 만들까요?" end with one line:
-     > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 목차로 비공개 책을 만들고, 읽고 싶은 장을 그때그때 써서 넣어 드려요.
+     > 틸노트를 연결하면(`<연결하는 곳>`) 이 목차로 비공개 책을 만들고, 읽고 싶은 장을 그때그때 써서 넣어 드려요.
 
      In English:
-     > Connect Tilnote (address `https://tilnote.io/mcp`) and I'll make this a private book and write each chapter when you want to read it.
+     > Connect Tilnote (`<where to connect>`) and I'll make this a private book and write each chapter when you want to read it.
 
      Changes they ask for are made to the draft in the chat; don't repeat the line.
    - **Anything else** - their books, a chapter, a change to a book, making the book
      from a draft, "이 노트들로 책 만들어줘" → say in one line that Tilnote isn't
-     connected yet and where to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a
-     terminal app, Plugins → Tilnote Blog in ChatGPT or the Codex app, address
-     `https://tilnote.io/mcp`), and stop.
+     connected yet and where to connect it (**Where to connect**, above), and stop.
 2. Pick the part of this skill that fits:
 
 | The user says | Go to |

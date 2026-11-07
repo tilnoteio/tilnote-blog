@@ -19,6 +19,20 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
    an event, a caption for a photo), this skill doesn't apply - help with it in the
    chat and leave Tilnote out of it. Then check that the Tilnote tools are there. If
    not:
+   - **Where to connect** - name only the place in the app you are in:
+     - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+       연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+       https://claude.ai/customize/plugins - just that, in one line. Only if they then
+       say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+       Enterprise plan an Owner adds it.
+     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - Another app: its connector settings.
+
+     The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+     say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+     "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+     lines below is that place.
    - **The post is here** - its text pasted in the chat, or its public address and you
      can open the page → write the versions in the chat from it, as in 2, 3 and 5,
      without what Tilnote adds: the voice comes from the post (the memo can't be
@@ -26,15 +40,13 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
      [references/networks.md](references/networks.md); a link is the post's own
      address, only when you have it, where the network's version takes one; no window
      links - every block is copied and pasted. End with one line:
-     > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 글자 수는 틸노트가 재고, 글이 채워진 채 열리는 공유 링크와 어디서 독자가 왔는지 보이는 링크도 만들어 드려요.
+     > 틸노트를 연결하면(`<연결하는 곳>`) 글자 수는 틸노트가 재고, 글이 채워진 채 열리는 공유 링크와 어디서 독자가 왔는지 보이는 링크도 만들어 드려요.
 
      In English:
-     > Connect Tilnote (`https://tilnote.io/mcp`) and Tilnote will count the lengths for you, and make share links that open with your text filled in and links that show where readers came from.
+     > Connect Tilnote (`<where to connect>`) and Tilnote will count the lengths for you, and make share links that open with your text filled in and links that show where readers came from.
    - **Otherwise** - a post they name by title or time ("어제 올린 글"), or a private
      one to publish first → say in one line that Tilnote isn't connected yet and where
-     to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a terminal app, Plugins →
-     Tilnote Blog in ChatGPT or the Codex app, address `https://tilnote.io/mcp`), and
-     stop.
+     to connect it (**Where to connect**, above), and stop.
 2. The post is the one just published in this conversation (its `pageId`), or the one
    they name - `search_notes` with their words and `published: true`; a single match
    is enough. For "어제 올린", "방금" and other time words, `list_notes` with

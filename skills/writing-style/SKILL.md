@@ -43,24 +43,36 @@ either language as the same section.
 
 Check first that the Tilnote tools are there. If not:
 
+- **Where to connect** - name only the place in the app you are in:
+  - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+    연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+    https://claude.ai/customize/plugins - just that, in one line. Only if they then
+    say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+    Enterprise plan an Owner adds it.
+  - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+  - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+  - Another app: its connector settings.
+
+  The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+  say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+  "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+  lines below is that place.
 - **Their writing is here** - posts or text they wrote, pasted in the chat → draft the
   memo from it as in "Learning from their posts", steps 2-4, and show it in the chat -
   nothing is saved, so instead of "이대로 저장할까요?" end with one line:
-  > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 메모를 비공개 노트로 저장해 두고, 이 플러그인을 쓰는 어느 AI 앱에서든 글을 쓸 때 이 문체를 따라요.
+  > 틸노트를 연결하면(`<연결하는 곳>`) 이 메모를 비공개 노트로 저장해 두고, 이 플러그인을 쓰는 어느 AI 앱에서든 글을 쓸 때 이 문체를 따라요.
 
   In English:
-  > Connect Tilnote (`https://tilnote.io/mcp`) and I'll save this memo as a private note, so posts follow your style in any AI app with this plugin.
+  > Connect Tilnote (`<where to connect>`) and I'll save this memo as a private note, so posts follow your style in any AI app with this plugin.
 - **A rule they state** ("앞으로 '~요'로 써줘", "'혁신적인' 쓰지 마") → follow it in the
   posts you write in this conversation, say so in a line, and end with one line:
-  > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 규칙을 '내 문체 메모'에 저장해 두고, 이 플러그인을 쓰는 다른 AI 앱에서 글을 쓸 때도 따라요.
+  > 틸노트를 연결하면(`<연결하는 곳>`) 이 규칙을 '내 문체 메모'에 저장해 두고, 이 플러그인을 쓰는 다른 AI 앱에서 글을 쓸 때도 따라요.
 
   In English:
-  > Connect Tilnote (`https://tilnote.io/mcp`) and I'll save this rule in your 'My writing style' memo, so other AI apps with this plugin follow it too.
+  > Connect Tilnote (`<where to connect>`) and I'll save this rule in your 'My writing style' memo, so other AI apps with this plugin follow it too.
 - **Anything that needs their notes** - learning from their published posts, "내 문체
   메모 보여줘", changing or deleting the memo → say in one line that Tilnote isn't
-  connected yet and where to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a
-  terminal app, Plugins → Tilnote Blog in ChatGPT or the Codex app, address
-  `https://tilnote.io/mcp`), and stop.
+  connected yet and where to connect it (**Where to connect**, above), and stop.
 
 ## Learning from their posts ("내 문체 기억해줘")
 

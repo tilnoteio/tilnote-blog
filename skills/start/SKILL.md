@@ -17,12 +17,23 @@ Titles of books, chapters and notes go in double quotes ("Git, 명령어 너머"
 ## 1. Connection
 
 Check that the Tilnote tools are there. If not, the plugin is installed but Tilnote
-isn't signed in yet. Say so in one line and tell them where to sign in - only the place in the
-app you are running in: where their app manages connections - in a terminal app usually `/mcp`, in a chat app the
-plugin's connector settings (in ChatGPT or the Codex app: Plugins → Tilnote Blog) -
-with the address `https://tilnote.io/mcp`. Then show the overview (section 3) without
-the account line and without a recommended step, so they know what they get once
-signed in, and stop.
+isn't signed in yet. Say so in one line and tell them where to sign in - only the place
+in the app you are running in:
+
+- claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+  연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+  https://claude.ai/customize/plugins - just that, in one line. Only if they then
+  say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+  Enterprise plan an Owner adds it.
+- A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+- ChatGPT or the Codex app: Plugins → Tilnote Blog.
+- Another app: its connector settings.
+
+The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+"add a new connector" and leaves two. Then show the overview (section 3) without the
+account line and without a recommended step, so they know what they get once signed
+in, and stop.
 
 ## 2. Look (read-only, one round)
 
@@ -75,7 +86,7 @@ Three parts, short enough to read without scrolling much:
 - 내 문체 메모: "내 문체 기억해줘" - 내 말투를 메모로 남기고, 글을 쓸 때마다 먼저 읽어요
 
 올린 뒤
-- 글 업그레이드: "이 글 업그레이드해줘" - 올린 글 이후 달라진 걸 알려 주고, 대화하며 새 자료·내 경험을 더해 글을 키워요. 고친 건 언제든 되돌릴 수 있어요
+- 글 업그레이드: "이 글 업그레이드해줘" - 올린 글 이후 달라진 걸 알려 주고, 대화하며 새 자료·내 경험을 더해 글을 키워요. 고친 건 되돌릴 수 있어요
 - 소셜 공유: "스레드용으로 바꿔줘" - SNS마다 맞는 문구와, 공유 창 링크(글을 채워 주는 곳은 채워서)
 - 다음 글 찾기: "다음에 뭐 쓰지?" - 내 글 반응을 보고 다음 글 후보 2~3개
 

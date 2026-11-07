@@ -26,18 +26,31 @@ meant to be said word for word have their English form next to them.
 1. If the text clearly isn't for their blog (an email, a cover letter, a report),
    just fix it in the chat at the level they asked and leave Tilnote out of it.
 2. Check that the Tilnote tools are there. If not:
+   - **Where to connect** - name only the place in the app you are in:
+     - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+       연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+       https://claude.ai/customize/plugins - just that, in one line. Only if they then
+       say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+       Enterprise plan an Owner adds it.
+     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - Another app: its connector settings.
+
+     The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+     say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+     "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+     lines below is that place.
    - **Pasted text** → work on it in the chat at the level they asked, as this skill
      does - a spelling check, a polish, or an upgrade with what you look up, sourced
      and dated (the memo can't be read: keep the voice the text has). Give the changed
      text, and end with one line:
-     > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 글을 노트로 저장하고, 말씀하실 때 블로그에 올릴 수 있어요.
+     > 틸노트를 연결하면(`<연결하는 곳>`) 이 글을 노트로 저장하고, 말씀하실 때 블로그에 올릴 수 있어요.
 
      In English:
-     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can save this as a note and post it to your blog when you say so.
+     > Connect Tilnote (`<where to connect>`) and I can save this as a note and post it to your blog when you say so.
    - **The request needs Tilnote** - a note, publishing, a published post, an earlier
      version → say in one line that Tilnote isn't connected yet and where to connect it
-     (only the place in the app you are in - the app's connection settings, `/mcp` in a terminal app, Plugins → Tilnote Blog
-     in ChatGPT or the Codex app, address `https://tilnote.io/mcp`), and stop.
+     (**Where to connect**, above), and stop.
 3. If you will change or publish the text (not to take it down, delete it or restore a
    version), `search_notes` with `q: "tilnote-style"` and `tags: ["tilnote-style"]`
    for their private `내 문체 메모` note (if none comes back, check once more with

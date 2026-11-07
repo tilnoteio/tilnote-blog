@@ -42,6 +42,20 @@ user's language:
 ## Before anything else
 
 1. Check that the Tilnote tools are there. If not:
+   - **Where to connect** - name only the place in the app you are in:
+     - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+       연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+       https://claude.ai/customize/plugins - just that, in one line. Only if they then
+       say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+       Enterprise plan an Owner adds it.
+     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - Another app: its connector settings.
+
+     The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+     say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+     "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+     lines below is that place.
    - **The request names the news it wants** ("로컬 LLM 최신 소식 브리핑해줘") → a
      one-off briefing in the chat: research as in "1. Research", steps 2 and 5, over
      the window of a first run, and write it as in "2. Briefing", step 1 - pages you
@@ -316,8 +330,8 @@ nothing before the briefing. On top of that:
 
 | When | 한국어 | English |
 |---|---|---|
-| not connected | 틸노트가 아직 연결되지 않았어요. 쓰시는 AI 앱의 연결 설정(터미널 앱은 `/mcp`)에서 틸노트(주소 `https://tilnote.io/mcp`)를 연결하시면 이어서 할게요. | Tilnote isn't connected yet. Connect it in your AI app's connection settings (`/mcp` in a terminal app), address `https://tilnote.io/mcp`, and I'll pick up from there. |
-| briefed without Tilnote | 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 토픽을 저장해 두고, 돌릴 때마다 지난번 뒤 소식만 모아 브리핑을 노트로 쌓아 드려요. | Connect Tilnote (`https://tilnote.io/mcp`) and I'll keep your topics, bring only what's new since the last run, and save each briefing as a note. |
+| not connected | 틸노트가 아직 연결되지 않았어요. `<연결하는 곳>`에서 연결하시면 이어서 할게요. | Tilnote isn't connected yet. Connect it at `<where to connect>` and I'll pick up from there. |
+| briefed without Tilnote | 틸노트를 연결하면(`<연결하는 곳>`) 토픽을 저장해 두고, 돌릴 때마다 지난번 뒤 소식만 모아 브리핑을 노트로 쌓아 드려요. | Connect Tilnote (`<where to connect>`) and I'll keep your topics, bring only what's new since the last run, and save each briefing as a note. |
 | scheduling hint | 쓰시는 AI 앱에 예약 실행 기능이 있으면 '틸노트 뉴스 리더 돌려줘'를 평일 오전 8시처럼 걸어 두세요. 돌 때마다 결과가 틸노트에 [뉴스] 노트로 쌓여요. | If your AI app can run scheduled tasks, schedule 'Run my Tilnote news reader' - say, weekdays at 8 AM. Each run is saved in Tilnote as a [News] note. |
 | save question | 이대로 '내 뉴스 토픽' 노트에 저장할까요? 토픽이나 키워드를 바꾸려면 말씀해 주세요. | Shall I save this as your 'My news topics' note? Tell me if you'd like other topics or keywords. |
 | run it now? | 지금 한 번 돌려 볼까요? | Shall I run it once now? |

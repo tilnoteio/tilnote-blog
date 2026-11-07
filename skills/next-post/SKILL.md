@@ -16,18 +16,30 @@ the fixed lines have an English form next to them.
 ## 1. Gather (read-only)
 
 1. Check that the Tilnote tools are there. If not:
+   - **Where to connect** - name only the place in the app you are in:
+     - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+       연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+       https://claude.ai/customize/plugins - just that, in one line. Only if they then
+       say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+       Enterprise plan an Owner adds it.
+     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - Another app: its connector settings.
+
+     The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+     say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+     "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+     lines below is that place.
    - **Their own posts** - how they are doing, which to fix ("내 글 조회수 어때",
      "반응 좋은 글 뭐야", "블로그 점검해줘") → say in one line that Tilnote isn't
-     connected yet and where to connect it (only the place in the app you are in - the app's connection settings, `/mcp` in a
-     terminal app, Plugins → Tilnote Blog in ChatGPT or the Codex app, address
-     `https://tilnote.io/mcp`), and stop.
+     connected yet and where to connect it (**Where to connect**, above), and stop.
    - **A topic question** ("블로그 주제 뭐가 좋을까", "다음에 뭐 쓰지") → answer it
      normally: a few ideas from what the conversation shows about them and what they
      write about - no claims about their posts, notes or numbers. End with one line:
-     > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 올린 글의 반응과 써 두다 만 노트를 보고 다음 글을 골라 드릴 수 있어요.
+     > 틸노트를 연결하면(`<연결하는 곳>`) 올린 글의 반응과 써 두다 만 노트를 보고 다음 글을 골라 드릴 수 있어요.
 
      In English:
-     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can pick your next post from how your published posts are doing and the notes you left unfinished.
+     > Connect Tilnote (`<where to connect>`) and I can pick your next post from how your published posts are doing and the notes you left unfinished.
 2. `search_notes` with `q: "tilnote-style"` and `tags: ["tilnote-style"]` for their
    `내 문체 메모` (`My writing style` in an English account) and `get_note` it if it
    exists - who they write for shapes which ideas fit. If it has `## 모드:` (`## Mode:`) sections, each mode's `언제:` (`When:`) line is a kind of post they

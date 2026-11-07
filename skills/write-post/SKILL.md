@@ -49,11 +49,24 @@ about it.
 1. **Tilnote is connected.** When they asked for the post somewhere else - another
    blog or platform, a file in their project - this skill doesn't apply: write it
    where they asked. When the Tilnote tools aren't there:
+   - **Where to connect** - name only the place in the app you are in:
+     - claude.ai or the Claude desktop app: 사용자 지정 → 플러그인 → Tilnote Blog → 커넥터 →
+       연결 (Customize → Plugins → Tilnote Blog → Connectors → Connect), with the link
+       https://claude.ai/customize/plugins - just that, in one line. Only if they then
+       say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
+       Enterprise plan an Owner adds it.
+     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
+     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - Another app: its connector settings.
+
+     The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
+     say Tilnote isn't among their app's connectors at all - offered unasked, it reads as
+     "add a new connector" and leaves two. `<연결하는 곳>` (`<where to connect>`) in the
+     lines below is that place.
    - **The request is about something only Tilnote has** - publishing a draft they
      already have, going on with an idea note or a draft, their published posts → say
-     in one line that Tilnote isn't connected yet and where to connect it (only the
-     place in the app you are in - the app's connection settings, `/mcp` in a terminal app, Plugins → Tilnote Blog in ChatGPT
-     or the Codex app, address `https://tilnote.io/mcp`), and stop.
+     in one line that Tilnote isn't connected yet and where to connect it (**Where to
+     connect**, above), and stop.
    - **Anything else** ("로컬 LLM에 대해 블로그 글 써줘", and "이거 글로 정리해서
      올려줘" too - the post can be written, only the publishing waits) → write the
      post in the chat, as they asked. Leave out only what needs Tilnote - the memo (write in the default
@@ -63,10 +76,10 @@ about it.
      no experience is invented.
      Reply with the post itself - the title, then the body - and end with one line,
      not a question:
-     > 틸노트를 연결하면(주소 `https://tilnote.io/mcp`) 이 글을 비공개 초안으로 저장해 두고, 말씀하실 때 블로그에 올릴 수 있어요.
+     > 틸노트를 연결하면(`<연결하는 곳>`) 이 글을 비공개 초안으로 저장해 두고, 말씀하실 때 블로그에 올릴 수 있어요.
 
      In English:
-     > Connect Tilnote (address `https://tilnote.io/mcp`) and I can save this as a private draft and post it to your blog when you say so.
+     > Connect Tilnote (`<where to connect>`) and I can save this as a private draft and post it to your blog when you say so.
 
      Changes they ask for after that are made in the chat; don't repeat the line.
 2. **Their writing memo.** `search_notes` with `q: "tilnote-style"` and

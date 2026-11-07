@@ -57,7 +57,11 @@ tilnoteio/tilnote-blog
 ### 4. 커넥터 탭에서 연결
 
 플러그인 화면의 **커넥터** 탭을 누르면 **틸노트 · 연결되지 않음**이 보입니다. 오른쪽 **연결**을
-누릅니다.
+누릅니다. 플러그인 화면은 언제든 [claude.ai/customize/plugins](https://claude.ai/customize/plugins)
+→ **내 항목** → **Tilnote Blog**로 다시 열 수 있습니다.
+
+**추가되지 않음**으로 나오면 **추가**를 먼저 누른 뒤 연결합니다. Team·Enterprise 요금제에서는
+조직의 Owner가 추가해 줘야 할 수 있습니다.
 
 ![커넥터 탭의 틸노트 연결되지 않음과 연결 버튼](images/claude-web/05-connector-not-connected.png)
 
