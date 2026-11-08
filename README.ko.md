@@ -60,7 +60,7 @@ English: [README.md](https://github.com/tilnoteio/tilnote-blog/blob/main/README.
 
 ## 설치
 
-틸노트 계정(무료 계정이면 되고, 로그인할 때 만들 수 있습니다)과 플러그인을 쓸 수 있는 AI 앱(Claude Code, 또는 Claude 웹·데스크톱)이 필요합니다. 발행은 틸노트 규칙(하루 발행 한도, 최소 길이, 스팸 검사)을 따르고, 걸리면 AI가 알려 줍니다.
+틸노트 계정(무료 계정이면 되고, 로그인할 때 만들 수 있습니다)과 플러그인을 쓸 수 있는 AI 앱(Claude Code, Claude 웹·데스크톱, 또는 ChatGPT 데스크톱 앱)이 필요합니다. 발행은 틸노트 규칙(하루 발행 한도, 최소 길이, 스팸 검사)을 따르고, 걸리면 AI가 알려 줍니다.
 
 **Claude Code**
 
@@ -69,9 +69,11 @@ English: [README.md](https://github.com/tilnoteio/tilnote-blog/blob/main/README.
 /plugin install tilnote-blog@tilnote-blog
 ```
 
-설치한 뒤 `/mcp` 에서 틸노트에 로그인하세요.
+설치한 뒤 Claude Code를 다시 시작하고 `/mcp` 에서 틸노트에 로그인하세요. 차례대로 보려면 [Claude Code 연결 가이드](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/claude-code.md)를 보세요.
 
 **Claude 웹·데스크톱 (유료 요금제)**: 사용자 지정 → 플러그인 → 추가 → 마켓플레이스 추가 → `tilnoteio/tilnote-blog`. 플러그인을 추가한 뒤 그 플러그인의 **커넥터** 탭에서 틸노트에 로그인하세요. 화면 사진과 함께 보려면 [Claude 웹 연결 가이드](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/claude-web.md)를 보세요.
+
+**ChatGPT (데스크톱 앱)**: 플러그인 파일(ZIP)을 [chatgpt.com/plugins](https://chatgpt.com/plugins) → 추가 → 플러그인 압축 파일 업로드로 올린 뒤, 데스크톱 앱의 플러그인 → 개인용 → Tilnote Blog에서 설치하고 틸노트에 연결하세요. 웹 대화에서는 스킬이 돌지 않습니다. 파일 받는 곳과 화면 사진은 [ChatGPT 연결 가이드](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/chatgpt.md)에 있습니다.
 
 틸노트를 커스텀 커넥터로 이미 연결했다면 둘 중 하나만 켜 두세요. 그대로 두면 틸노트 도구가 두 벌 생깁니다.
 

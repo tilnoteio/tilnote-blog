@@ -53,9 +53,11 @@ These don't depend on each other; make them together if your app allows it.
 6. `search_notes` with `q: "tilnote-book-toc"` and `tags: ["tilnote-book-toc"]` -
    the 목차 notes of books made with this plugin, one per book.
 
-Then, only if step 6 found a 목차 note, `get_note` the most recently updated one once.
-Each chapter there has a `상태:` (`Status:`) line; the first `⬜` is the chapter to
-offer next.
+Then, only if step 6 found a 목차 note, read the most recently updated one once with
+`get_note_blocks` (just its `pageId`) - not `get_note`, which in ChatGPT and Codex opens
+the whole note in a viewer above your answer. Each chapter there has a `상태:`
+(`Status:`) line; the first `⬜` is the chapter to offer next. If the first `⬜` isn't in
+what came back, continue once with `fromBlock`.
 
 Stop there. This is a welcome, not an audit: no paging, no reading posts. Reading
 their posts is writing-style's job, judging them is next-post's.
@@ -183,6 +185,9 @@ memo before saving it, publish only on a clear yes.
   `append_to_note`, `publish_note` or `create_book`. The skill you hand over to asks
   before it saves, as it always does.
 - One screen. Seven lines, not seven paragraphs; details only when asked.
+- No bold around a sentence in quotes. Next to a Korean particle (`**"다음에 뭐
+  쓰지?"**를`) many apps show the asterisks instead of bold.
+- Say 글 아이디어, never 글감.
 - Only what this plugin does. Tilnote doesn't post to social networks, send email or
   run anything on its own; don't promise it. Don't explain the Tilnote website's
   buttons and menus - you can't see them.

@@ -65,13 +65,19 @@ private draft, and it can be published again any time.
 
 ## Delete - only when asked in so many words
 
-`delete_note` destroys the note, its images and its place in any book. There is no
-trash can. Use it only when the user asks for the note to be gone - "완전히 지워줘",
-"삭제해줘", "흔적도 없이" - not for "내려줘".
+`delete_note` moves the note to Tilnote's trash: it leaves the blog, its books and the
+note list. For 30 days the user can restore it - with its images and its place in any
+book - from the trash at tilnote.io/home/trash; after that it is deleted for good. Use
+it only when the user asks for the note to be gone - "완전히 지워줘", "삭제해줘",
+"흔적도 없이" - not for "내려줘".
 
-1. Name the note and confirm: "'○○' 노트를 완전히 지울까요? 되돌릴 수 없어요."
-   ("Delete the note '○○' for good? It can't be undone.")
+1. Name the note and confirm: "'○○' 노트를 지울까요? 휴지통으로 가고, 30일 안에는
+   tilnote.io/home/trash 에서 되살릴 수 있어요."
+   ("Delete the note '○○'? It goes to the trash, and you can restore it from
+   tilnote.io/home/trash within 30 days.")
 2. On a clear yes, `delete_note` with `confirm: true`.
+3. If they want it gone for good right away, say they can press 완전히 삭제 next to it
+   in the trash - an AI app can't empty the trash.
 
 If the request is ambiguous ("그거 없애줘"), unpublish, then say the note is kept and
 can be deleted if that is what they meant.

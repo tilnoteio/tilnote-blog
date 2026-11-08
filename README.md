@@ -126,7 +126,8 @@ anything to a social network for you. Each link carries a small tag
 ## Install
 
 You need a Tilnote account - a free one works, and you can create it when you sign in -
-and an AI app that takes plugins: Claude Code, or Claude on the web or desktop.
+and an AI app that takes plugins: Claude Code, Claude on the web or desktop, or the ChatGPT
+desktop app (ChatGPT or Codex).
 Publishing follows Tilnote's rules - a daily post limit, a minimum length and a spam
 check - and the AI tells you when one applies.
 
@@ -137,12 +138,19 @@ check - and the AI tells you when one applies.
 /plugin install tilnote-blog@tilnote-blog
 ```
 
-Then run `/mcp` and sign in to Tilnote.
+Then restart Claude Code, run `/mcp` and sign in to Tilnote. Step by step (in Korean):
+[guides/claude-code.md](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/claude-code.md).
 
 **Claude (web and desktop, paid plans)**: Customize → Plugins → Add → Add marketplace →
 `tilnoteio/tilnote-blog`. After adding the plugin, open its **Connectors** tab and
 sign in to Tilnote. A step-by-step guide with screenshots (in Korean):
 [guides/claude-web.md](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/claude-web.md).
+
+**ChatGPT (desktop app)**: upload the plugin ZIP at
+[chatgpt.com/plugins](https://chatgpt.com/plugins) → Add → Upload plugin ZIP, then in the
+desktop app (ChatGPT or Codex) open Plugins → Personal → Tilnote Blog, install it and connect Tilnote.
+The skills don't run in chats on the web. Where to get the ZIP, with screenshots (in Korean):
+[guides/chatgpt.md](https://github.com/tilnoteio/tilnote-blog/blob/main/guides/chatgpt.md).
 
 If you already added Tilnote as a custom connector, keep only one of the two enabled -
 otherwise you get two copies of the Tilnote tools.
