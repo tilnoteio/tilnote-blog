@@ -89,6 +89,9 @@ days)" for a capped window.
 - **내 노트** (only sometimes): when the item continues one of the user's `[글 아이디어]`
   notes, `내 노트: [글 아이디어] <제목> (링크)`; when it continues a published post,
   `지난 글 [<제목>](https://tilnote.io/pages/<pageId>)의 후속`. One line, no more.
+- **A topic added since the last run** (SKILL.md, research step 3) gets one line
+  right under its heading, before its items: "(새로 추가한 토픽이라 최근 2일 소식을
+  봤어요)" ("(New topic, so this covers the last 2 days)" in English).
 - **새 소식 없음** for a topic with nothing new in the window - one line, no filler.
 - **확인하지 못함: 찾은 기사 N건을 열 수 없었어요** for a topic whose stories were found
   but none would open. It is not "새 소식 없음": the news may be there, unchecked.
@@ -119,6 +122,9 @@ days)" for a capped window.
 
 With `결과 저장: [뉴스] 노트에 저장` (the default):
 
+- **No item at all** (every topic ended `새 소식 없음` or `확인하지 못함`) → save
+  nothing: no new note, and no `## HH:mm 추가` section on today's. The chat gets the
+  "nothing new" line instead of the briefing (SKILL.md, 2. Briefing, step 4).
 - **First run of the day** → `create_note`, private, title `[뉴스] YYYY-MM-DD 브리핑`
   (the date of the run in the note's time zone, e.g. `[뉴스] 2026-10-31 브리핑`; in
   English `[News] 2026-10-31 briefing`), tags `["tilnote-news"]`, `aiGenerated: true`, and the

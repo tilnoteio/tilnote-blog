@@ -48,8 +48,9 @@ user's language:
        https://claude.ai/customize/plugins - just that, in one line. Only if they then
        say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
        Enterprise plan an Owner adds it.
-     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
-     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - A terminal app such as Claude Code: `/mcp` → plugin:tilnote-blog:tilnote → Authenticate.
+     - ChatGPT or the Codex app: 플러그인 → Tilnote Blog → MCP 서버의 tilnote → 연결
+       (Plugins → Tilnote Blog → the tilnote MCP server → Connect).
      - Another app: its connector settings.
 
      The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they
@@ -127,8 +128,9 @@ what to do when the edit is refused, is in
 [references/topics-note.md](references/topics-note.md), "Updating it".
 
 - **Add** ("토픽에 전기차 배터리 추가해줘") → 2-4 keywords as in registering, then add
-  the topic. With five topics already running, say so and ask which to drop or pause
-  first.
+  the topic with a `추가한 때` line - now, in the note's time zone - so its first run
+  looks back 2 days, not only since the last run (research step 3). With five topics
+  already running, say so and ask which to drop or pause first.
 - **Remove** ("로컬 LLM은 빼줘") → delete that topic: its heading and all its lines.
 - **Pause / resume** ("AI 에이전트는 잠깐 쉬어") → `(쉬는 중)` after its name (`(paused)`
   in an English note); take it off to resume. Only the heading line changes.
@@ -158,7 +160,10 @@ link. Don't reprint the note.
 3. **The window** runs from `마지막으로 돌린 때` to now, in the note's time zone - or,
    when `기간` is a number of days the user wrote ("3일", "3 days"), that many days
    back from now. No last run (or one you can't read) → the last 2 days. More than 7
-   days back → the last 7 days, and say so in the heading.
+   days back → the last 7 days, and say so in the heading. A topic whose `추가한 때`
+   (`Added`) is later than `마지막으로 돌린 때` was added since the last run: it gets a
+   first run's window, the last 2 days, and its part of the briefing says so in one
+   line (references/briefing.md).
 4. **What was already covered, and what the user keeps.**
    - **Recent briefings, found by date.** Never with `search_notes`: it ranks by
      relevance, not date. Instead `list_notes` (`limit: 50`, newest created first) and
@@ -217,7 +222,10 @@ words and link the original.
    <제목> (링크)` or `지난 글 [<제목>](https://tilnote.io/pages/<pageId>)의 후속` (in
    English `My note: [Idea] <title> (link)` or `Follow-up to [<title>](...)`). Don't
    write into that idea note during the run - offer it in the next-step line.
-2. **Save it,** unless the note says `결과 저장: 저장 안 함`: `create_note`, private,
+2. **Save it,** unless the note says `결과 저장: 저장 안 함` - or the briefing has no item
+   at all (every topic ended "새 소식 없음" or "확인하지 못함"): then nothing is saved,
+   neither a new note nor a section on today's, since a note that only says "nothing
+   new" is clutter. Otherwise: `create_note`, private,
    titled `[뉴스] YYYY-MM-DD 브리핑` / `[News] YYYY-MM-DD briefing` (today in the note's
    time zone), tags `["tilnote-news"]`, with `aiGenerated: true`. If today's briefing
    already exists, `append_to_note` a `## HH:mm 추가` (`## HH:mm update`) section to
@@ -230,15 +238,18 @@ words and link the original.
    (<its time zone>)` (one `edit_note`: `find` the line as you read it in research step
    1, `content` the new time). If you don't know the time of day, the `createdAt` of
    the note you just saved has it (UTC - add 9 hours for Korean time, or convert to the
-   note's time zone). Do this even with saving off: the next run's window starts here.
-   With saving off there is no such note: if you still don't know the time, write
-   today's date with `00:00` - a window that starts early only repeats a few stories,
-   one that starts late loses news. But if any topic ended "확인하지 못함", or its
-   searches failed, leave it as it is, so the next run covers those days again.
+   note's time zone). Do this even when nothing was saved (saving off, or no item): the
+   next run's window starts here. Then there is no such note: if you still don't know
+   the time, write today's date with `00:00` - a window that starts early only repeats
+   a few stories, one that starts late loses news. But if any topic ended
+   "확인하지 못함", or its searches failed, leave it as it is, so the next run covers
+   those days again.
 4. **Reply** with the briefing, one line with the note link (when it was saved), then
    the next-step line (Fixed sentences) - the one that offers to add an item to its idea
    note when an item has a `내 노트: [글 아이디어]` line. Show the briefing once - not
-   again as "saved content".
+   again as "saved content". With no item at all, reply with "nothing new" (Fixed
+   sentences) instead of the briefing - plus, for a topic that ended "확인하지 못함",
+   its name and that line - and no note link or next-step line.
 
 ## 3. To a post (글로)
 
@@ -302,16 +313,18 @@ Nothing is published from this skill.
   schedule here" instead.
 - **If this app lets you create a scheduled task** (a tool for scheduled or recurring
   tasks that outlive this chat is available to you) and the user asked for one: create
-  it with the prompt exactly `틸노트 뉴스 리더 돌려줘` (for an English-speaking user,
-  exactly `Run my Tilnote news reader`), on the days and at the time they said, in
-  their time zone. If they gave no time, ask once with "ask the time" (Fixed
-  sentences). Then report only what the app confirmed - the days and time it shows,
-  where to turn it off, and any limit it states (an expiry, the app has to stay
-  open). When the app runs it somewhere else (a cloud routine), add one line that
+  it with the prompt exactly `틸노트 뉴스 리더 돌려줘. 새 소식은 [뉴스] 노트에 저장하고 돌린
+  시각도 기록해 줘` (for an English-speaking user, exactly `Run my Tilnote news reader.
+  Save new stories as a [News] note and record the run time`), on the days and at the
+  time they said, in their time zone. The sentence names the save and the record
+  because some apps let an unattended run write only what its prompt asks for. If
+  they gave no time, ask once with "ask the time" (Fixed sentences). Then report only
+  what the app confirmed - the days and time it shows, where to turn it off, and any
+  limit it states (an expiry, the app has to stay open). When the app runs it somewhere else (a cloud routine), add one line that
   this plugin and Tilnote have to be connected there too. Nothing more.
 - **Otherwise** give the how-to in one line: "can't schedule here" (Fixed sentences).
-- Never say Tilnote runs it. The app runs the sentence, and each run saves a `[뉴스]`
-  note.
+- Never say Tilnote runs it. The app runs the sentence, and each run with new stories
+  saves a `[뉴스]` note.
 - "예약 꺼줘" → turn it off the same way if this app lets you, or say where in the app
   it is turned off.
 
@@ -320,11 +333,15 @@ nothing before the briefing. On top of that:
 
 - Never publish anything, never write into idea notes, and never stop to wait for an
   answer.
+- The schedule's sentence asks for the save and the record so the app lets them
+  through; when to do them still follows "2. Briefing" (no item → nothing saved; a
+  topic not checked → `마지막으로 돌린 때` stays).
 - No topics note, or every topic paused → one line saying so ("unattended, no topics"
   or "all paused", Fixed sentences) and stop.
 - Can't search, or can't open pages → that message, and stop. Nothing saved.
 - Otherwise run as usual: save per the setting, update `마지막으로 돌린 때` (unless a
-  topic couldn't be checked), and end with the briefing.
+  topic couldn't be checked), and end with the briefing - or, with no item, the
+  "nothing new" line, nothing saved.
 
 ## Fixed sentences
 
@@ -332,17 +349,18 @@ nothing before the briefing. On top of that:
 |---|---|---|
 | not connected | 틸노트가 아직 연결되지 않았어요. `<연결하는 곳>`에서 연결하시면 이어서 할게요. | Tilnote isn't connected yet. Connect it at `<where to connect>` and I'll pick up from there. |
 | briefed without Tilnote | 틸노트를 연결하면(`<연결하는 곳>`) 토픽을 저장해 두고, 돌릴 때마다 지난번 뒤 소식만 모아 브리핑을 노트로 쌓아 드려요. | Connect Tilnote (`<where to connect>`) and I'll keep your topics, bring only what's new since the last run, and save each briefing as a note. |
-| scheduling hint | 쓰시는 AI 앱에 예약 실행 기능이 있으면 '틸노트 뉴스 리더 돌려줘'를 평일 오전 8시처럼 걸어 두세요. 돌 때마다 결과가 틸노트에 [뉴스] 노트로 쌓여요. | If your AI app can run scheduled tasks, schedule 'Run my Tilnote news reader' - say, weekdays at 8 AM. Each run is saved in Tilnote as a [News] note. |
+| scheduling hint | 쓰시는 AI 앱에 예약 실행 기능이 있으면 '틸노트 뉴스 리더 돌려줘. 새 소식은 [뉴스] 노트에 저장하고 돌린 시각도 기록해 줘'를 평일 오전 8시처럼 걸어 두세요. 새 소식이 있을 때마다 틸노트에 [뉴스] 노트로 쌓여요. | If your AI app can run scheduled tasks, schedule 'Run my Tilnote news reader. Save new stories as a [News] note and record the run time' - say, weekdays at 8 AM. New stories pile up in Tilnote as [News] notes. |
 | save question | 이대로 '내 뉴스 토픽' 노트에 저장할까요? 토픽이나 키워드를 바꾸려면 말씀해 주세요. | Shall I save this as your 'My news topics' note? Tell me if you'd like other topics or keywords. |
 | run it now? | 지금 한 번 돌려 볼까요? | Shall I run it once now? |
 | no topics | 아직 등록한 토픽이 없어요. 어떤 소식을 챙겨 보고 싶으세요? | You have no news topics yet. What would you like to keep up with? |
 | can't search | 이 앱에서는 지금 웹 검색을 쓸 수 없어서 최신 소식을 찾을 수 없어요. 기억으로 채우면 지난 소식이나 틀린 소식이 섞일 수 있어서 여기서 멈출게요. 웹 검색을 켜거나, 검색이 되는 AI 앱에서 '뉴스 돌려줘'라고 해 주세요. | I can't search the web in this app right now, so I can't find recent news. Filling it in from memory could mix in old or wrong stories, so I'll stop here. Turn on web search, or say "Run my Tilnote news reader" in an AI app that can search. |
 | can't open pages | 이 앱에서는 웹 검색은 되지만 찾은 기사를 열어 볼 수 없어서 날짜와 내용을 확인할 수 없어요. 기억으로 채우면 틀린 소식이 섞일 수 있어서 여기서 멈출게요. 웹 페이지를 열 수 있는 AI 앱에서 '뉴스 돌려줘'라고 해 주세요. | I can search the web in this app, but I can't open the stories I find, so I can't check their dates or what they say. Filling it in could mix in wrong stories, so I'll stop here. Say "Run my Tilnote news reader" in an AI app that can open web pages. |
+| nothing new | `<언제>` 뒤로 새 소식이 없어서 노트에는 남기지 않았어요. (`결과 저장: 저장 안 함`이면: `<언제>` 뒤로 새 소식이 없어요.) `<언제>`는 제목의 기간 시작, 예: 11월 8일 오후 1시 49분 | No new stories since `<when>`, so I didn't save a note. (With saving off: No new stories since `<when>`.) `<when>` is the window's start, e.g. Nov 8, 1:49 PM |
 | next step | 글로 써 볼 소식이 있으면 번호로 알려 주세요. 나중에 쓰려면 '3번 글 아이디어로 저장'이라고 하시면 돼요. | If one of these is worth a post, tell me its number. To keep one for later, say 'save 3 as an idea'. |
 | next step, item 2 continues an idea note | 글로 써 볼 소식이 있으면 번호로 알려 주세요. 2번은 저장해 둔 글 아이디어와 이어져요 - '2번 글 아이디어에 더해줘'라고 하시면 그 노트에 이 소식을 넣어 둘게요. | If one of these is worth a post, tell me its number. Number 2 continues an idea you saved - say 'add 2 to my idea' and I'll put this story in that note. |
 | idea saved | 다음에 '○○ 글 아이디어 이어서'라고 하시면 돼요. 지금 이 소식으로 글 쓰자고 하시면 함께 쓰기로 이어 갈게요. | Next time, say 'continue my <topic> idea'. Or say 'let's write it' and we'll write the post now. |
 | ask the time | 평일 오전 8시로 걸어 둘까요? | Shall I set it for weekdays at 8 AM? |
-| can't schedule here | 이 앱에서는 제가 예약을 걸 수 없어요. 쓰시는 AI 앱의 예약 실행 기능에 '틸노트 뉴스 리더 돌려줘'를 평일 오전 8시처럼 걸어 두세요. | I can't schedule it from this app. In your AI app's scheduled tasks, add 'Run my Tilnote news reader' - say, weekdays at 8 AM. |
+| can't schedule here | 이 앱에서는 제가 예약을 걸 수 없어요. 쓰시는 AI 앱의 예약 실행 기능에 '틸노트 뉴스 리더 돌려줘. 새 소식은 [뉴스] 노트에 저장하고 돌린 시각도 기록해 줘'를 평일 오전 8시처럼 걸어 두세요. | I can't schedule it from this app. In your AI app's scheduled tasks, add 'Run my Tilnote news reader. Save new stories as a [News] note and record the run time' - say, weekdays at 8 AM. |
 | unattended, no topics | '관심 토픽 등록해줘'라고 하시면 돼요. | Say 'set up my news topics' to start. |
 | all paused | 모든 토픽이 쉬는 중이에요. | All your topics are paused. |
 

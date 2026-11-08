@@ -84,14 +84,17 @@ date doesn't count as news), and skips stories its briefings from the past week
 already covered. You get a short briefing: per item a title, a link,
 the source and date, what happened, why it matters for you, and a question it could
 become a post about. The briefing is saved as a private note,
-`[News] 2026-10-31 briefing`, and "save 3 as an idea" keeps an item as an idea note for later.
+`[News] 2026-10-31 briefing` - when there is no new story at all, it says so in one
+line and saves no note - and "save 3 as an idea" keeps an item as an idea note for later.
 Dates follow the time zone in your topics note.
 
 It needs an AI app that can search the web and open the pages it finds; without that
 it says so instead of making news up. Tilnote runs nothing by itself. If your AI app
-can run a task on a schedule, schedule the sentence "Run my Tilnote news reader" (say, weekdays at 8 a.m.) - or ask "run it every weekday
-at 8am" and the AI sets it up where the app lets it - and the briefings pile up in
-Tilnote as `[News]` notes. The plugin and the Tilnote connection must be there in the
+can run a task on a schedule, schedule the sentence "Run my Tilnote news reader. Save
+new stories as a [News] note and record the run time" (say, weekdays at 8 a.m.) - or
+ask "run it every weekday at 8am" and the AI sets it up with that sentence where the
+app lets it - and new stories pile up in Tilnote as `[News]` notes. The sentence names
+the save because some apps let an unattended run write only what its prompt asks for. The plugin and the Tilnote connection must be there in the
 app that runs the schedule.
 
 ## Books, in plain words

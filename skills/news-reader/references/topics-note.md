@@ -106,6 +106,7 @@ them, and still finds it as `### 로컬 LLM (쉬는 중)` - as long as the call 
 | `빼고 싶은 말` | `Leave out` | Words whose results are noise for this topic ("코인" next to "AI 에이전트") | `(없음)` / `(none)` |
 | `언어` | `Language` | The languages to search in: `한국어`, or `한국어+영어` when the topic is global (AI, dev tools, chips). In English: `English`, or `English+<language>` when they also want news written in another language | `한국어` / `English` |
 | `메모` | `Memo` | Why the user follows it, in their words. Drives "왜 볼 만한지" | `(없음)` / `(none)` |
+| `추가한 때` | `Added` | Only on a topic added to a note that already exists: `YYYY-MM-DD HH:mm (<time zone>)` of when it was added, or the date alone when you don't know the time of day. A topic added after the last run gets a first run's window (research step 3) | no line - topics saved when registering have none |
 | `토픽당` | `Per topic` | Items per topic, 1-5 | `3건` / `3 items` |
 | `기간` | `Window` | How far back a run looks | since the last run; 2 days the first time; never more than 7 days |
 | `결과 저장` | `Save results` | `[뉴스] 노트에 저장` or `저장 안 함` / `save as a [News] note` or `don't save` | save |
@@ -135,6 +136,8 @@ The user edits this note by hand, so read it leniently:
 - A missing or unreadable line → its default. Don't rewrite their note to "fix" it.
 - A topic with no keywords → use its name as the keyword.
 - `토픽당` above 5 → 5. `기간` they wrote themselves ("3일") → that many days, up to 7.
+- `추가한 때` you can't read → as if it weren't there. A date with no time counts as
+  later than any run on that day.
 - More than 5 topics running → run the first five and say in one line which were left
   out.
 
@@ -153,8 +156,10 @@ setting: ignore it.
   editor's `*` markers and `\[` escapes match the plain text you quote, and stay as they
   are.
 - **Add a topic** → `append` with `section: "토픽"` (`"Topics"` in an English note) and
-  the new `### <이름>` heading with its lines, in the note's labels, as `content`. It
-  lands after the last topic, before `## 돌리는 방법`.
+  the new `### <이름>` heading with its lines, in the note's labels, as `content` - the
+  last line `- 추가한 때: <now, YYYY-MM-DD HH:mm> (한국 시간)`
+  (`- Added: <...> (<its time zone>)`; the date alone when you don't know the time of
+  day). It lands after the last topic, before `## 돌리는 방법`.
 - **Remove a topic** → `delete` with `section: "<토픽 이름>"`: its heading and every line
   under it go together. A whole-section delete needs that `revision`.
 - **Pause** → `replace` with `find` the heading line as it is (`### AI 에이전트`) and

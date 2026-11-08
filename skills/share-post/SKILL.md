@@ -25,8 +25,9 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
        https://claude.ai/customize/plugins - just that, in one line. Only if they then
        say the tab shows 추가되지 않음 (Not added): 추가 (Add) first, and on a Team or
        Enterprise plan an Owner adds it.
-     - A terminal app such as Claude Code: `/mcp` → tilnote → Authenticate.
-     - ChatGPT or the Codex app: Plugins → Tilnote Blog.
+     - A terminal app such as Claude Code: `/mcp` → plugin:tilnote-blog:tilnote → Authenticate.
+     - ChatGPT or the Codex app: 플러그인 → Tilnote Blog → MCP 서버의 tilnote → 연결
+       (Plugins → Tilnote Blog → the tilnote MCP server → Connect).
      - Another app: its connector settings.
 
      The plugin already has Tilnote's address. Give `https://tilnote.io/mcp` only when they

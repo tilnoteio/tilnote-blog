@@ -85,8 +85,9 @@ Tilnote can pick up where they stopped.
   `[뉴스] YYYY-MM-DD 브리핑`; "3번 글 아이디어로 저장" keeps one item as an idea note.
 - Needs an AI app that can search the web; without it, it says so instead of making
   news up. Tilnote doesn't run it on its own. If their app can schedule
-  tasks, they can schedule "틸노트 뉴스 리더 돌려줘" ("Run my Tilnote news reader")
-  for weekday mornings.
+  tasks, they can schedule "틸노트 뉴스 리더 돌려줘. 새 소식은 [뉴스] 노트에 저장하고
+  돌린 시각도 기록해 줘" ("Run my Tilnote news reader. Save new stories as a [News]
+  note and record the run time") for weekday mornings.
 - Say: "관심 토픽 등록해줘", "뉴스 돌려줘", "토픽 추가해줘".
 
 ## 책 만들기 (make-book)
