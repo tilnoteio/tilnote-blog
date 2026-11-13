@@ -25,8 +25,10 @@ before it left off.
   what this reader asks and needs explained: none of its facts, sentences, numbers or
   names go into the page - unless the 목차 노트 has `비공개 노트: 장에 써도 돼요` (or
   `Private notes: OK to use in chapters`), and
-  then still not other people's names, clients or companies, contact details, money
-  or health.
+  then still not what SKILL.md's "Private notes shape the book" keeps out: other
+  people's names, contact details and ID numbers, the user's health, money and family,
+  secrets (a code block gets a placeholder for the value), internal addresses, and
+  work matters (employer, clients, contract terms, figures not made public).
 
 ## Look things up
 

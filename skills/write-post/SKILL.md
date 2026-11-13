@@ -132,7 +132,12 @@ about it.
      they are continuing;
    - they name it ("이 노트로 써줘", "○○ 노트 참고해서"), or picked it from next-post's
      candidates;
+   - they ask for their private notes in general ("비공개 노트도 다 참고해서") - then
+     every private note on the topic, except the working and book notes below;
    - they ask for it after the draft ("그 노트도 넣어줘").
+
+   Even then, only what the post needs goes in ("From a private note" in 3), and the
+   draft's report names each note you took from.
 
    Any other private note on the topic: don't `get_note` it and put nothing from it
    into the draft - no fact, phrase or number. Name up to two of them by title when you
@@ -264,9 +269,24 @@ up" phrase) waits until they tell you one at 4; until then write to the reader a
 follow the rest of the memo.
 
 **From a private note, only what the post needs.** A note the user wrote for
-themselves can hold other people's names, a client or company name, contact details,
-money or health matters. Leave those out unless the user puts them into the post
-themselves in this conversation.
+themselves can hold what must never go public. Take its experience, steps and
+lessons; leave these out unless the user puts them into the post themselves in this
+conversation:
+
+- **People and personal details** - other people's names (a public figure cited for
+  what they said in public is fine), anyone's email, phone number or address, ID,
+  account or card numbers, and the user's own health, money and family matters.
+- **Secrets** - passwords, API keys, tokens, a connection string with a password in
+  it. A code block you keep gets a placeholder for the value (`DATABASE_URL=...`) -
+  an example value, not a blank left for the writer.
+- **Internal addresses** - a company wiki, an internal server or IP, links to private
+  documents (Notion, Google Docs, Slack).
+- **Work matters** - the names of their employer, clients or partners, contract terms
+  and amounts, figures and plans not made public. Keep what is general
+  ("한빛물산 납품 계약서" → "계약서 같은 긴 문서").
+
+When you leave such things out, say so in a few words by kind, never the value
+("서버 주소와 키는 넣지 않았어요").
 
 **No questions in the draft.** Write a finished post from what the material
 supports. Don't leave blanks or placeholders for the writer to fill, and don't ask
@@ -456,7 +476,9 @@ Don't repeat the "궁금한 건 물어보시고…" line every turn. When they s
 
 **Publish only when they say so.** Run the checks in
 [references/publish.md](references/publish.md): time-sensitive facts re-checked if you
-can search, title, summary and tags ready.
+can search, title, summary and tags ready, and nothing in the body that shouldn't be
+public (a password, a key, someone's phone number) - that one stops even a publish
+they already asked for, until they say how.
 Then ask "이대로 공개할까요?" ("Publish it like this?") and publish on a clear yes:
 draw the cover image ([references/cover.md](references/cover.md)), then `publish_note`
 with the same `pageId` (never a second copy), the `summary` the note has now
@@ -471,7 +493,8 @@ built on their own part from this conversation, or it is a draft you saved and s
 them earlier (with whatever they added since). That keeps "한 마디로 올리기" working
 without publishing a post nobody has seen. Then go straight through in this turn -
 `create_note` if it isn't saved yet, the publish.md checks, the cover, `publish_note`
-- with no "show only" list and no question, and give the after-publishing reply.
+- with no "show only" list and no question (unless publish.md check 9 finds something
+that shouldn't be public), and give the after-publishing reply.
 "써서 바로 올려줘" ("write it and post it") with only a topic is not that: show the
 draft as usual and ask, unless they clearly meant it to go out unseen ("확인 안 해도
 돼, 바로 올려", "no need to show me, just post it").

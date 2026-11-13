@@ -49,8 +49,13 @@ and no link. When the user asks to include their private notes ("비공개 노�
 넣어줘", or the notes they give for "이 노트들로 책 만들어줘"), the 목차 노트 gets the
 line `- 비공개 노트: 장에 써도 돼요` (`- Private notes: OK to use in chapters` in a
 note with English labels), and chapters may then use the private notes in
-their plans - leaving out other people's names, clients or companies, contact
-details, money and health - still without linking them. Asked in a later
+their plans - their experience, steps and lessons, still without linking them, and
+never other people's names, anyone's contact details or ID, account or card numbers,
+the user's own health, money and family matters, secrets (passwords, API keys,
+tokens - a code block gets a placeholder: `DATABASE_URL=...`), internal addresses (a
+company wiki, an internal server or IP, private document links), or work matters
+(their employer's, clients' or partners' names, contract terms and amounts, figures
+and plans not made public). Asked in a later
 conversation, add that line with one `edit_note` (`insert_after` the `함께 쓰는 예제`
 line - `Running example:` in a note with English labels).
 

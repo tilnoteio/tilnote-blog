@@ -63,7 +63,12 @@ Speak in the user's language. Examples are Korean because most Tilnote writers a
    "This post is still private, so the link won't open for anyone. Publish it first?")
    Publishing follows the usual rules - a summary, tags, a cover and a clear yes. In
    the same message, show the summary and tags you would pass, so one yes covers
-   them. After the yes, when `get_note` shows no cover (`Cover: none` in its text, or
+   them. Before you ask, read the body for what shouldn't be public - passwords, API
+   keys, tokens, email addresses and phone numbers, ID, account or card numbers,
+   internal addresses (a company wiki, an internal IP), another person's private
+   details, a client's contract terms (placeholders such as `you@example.com` are
+   fine). If something turns up, say in the same message where it is and what kind -
+   never the value - and that it would go public as it is; they decide. After the yes, when `get_note` shows no cover (`Cover: none` in its text, or
    `thumbnailUrl: null` in its data) and the post has no photo of the user's own,
    draw the cover as in [references/cover.md](references/cover.md), without asking -
    a cover you can see stays; then `publish_note` with the same `pageId`, the

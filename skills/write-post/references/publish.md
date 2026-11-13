@@ -36,12 +36,28 @@ that went out with a stale price in it is not.
 8. **Footnotes** match: every `[^n]` in the body has its `[^n]: [제목](URL)` line under
    `## 참고` (`## References`) at the end, every line there is cited, and no `[^1, 2]` - write
    `[^1][^2]`. Something the user added in the editor may have broken this.
+9. **Nothing that shouldn't be public.** Read the whole body - the user may have
+   written it themselves or added to it in the editor - for: passwords, API keys,
+   tokens or a connection string with a password; email addresses and phone numbers;
+   ID, account or card numbers; a home address; internal addresses (a company wiki, an
+   internal server or IP, links to private documents); another person's name with
+   private details about them; a client's name with contract terms or amounts.
+   Placeholder values in a how-to (`you@example.com`, `localhost:3000`,
+   `sk-...`, `<API_KEY>`) are fine. If something turns up, don't publish yet - even
+   when the request counted as the yes: say in one short message where each one is
+   (the section, in the user's words) and what kind it is - never the value itself -
+   and offer one fix (a placeholder for a secret, the line taken out for a contact or
+   a private detail). Apply it on a yes, then publish; "그대로 올려" ("post it as it
+   is") publishes it unchanged - it is their post. If nothing turns up, the reply
+   doesn't mention this check or the placeholder values at all - not even "I
+   checked".
 
 Then, unless the request itself already counts as the yes ("5. Publish" in the skill:
 they asked to publish - "올려줘", "publish it" - a draft they have seen, or a post
 built on their own part of this conversation), ask once, plainly: "이대로
 공개할까요?" ("Publish it like this?") A clear yes publishes.
-Anything else - a change, a question, silence - doesn't.
+Anything else - a change, a question, silence - doesn't. Check 9 is the one check
+that stops a publish the request already said yes to.
 
 ## Publishing
 

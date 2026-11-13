@@ -8,4 +8,4 @@ Tilnote Blog 플러그인을 AI 앱에 넣고 내 틸노트 계정과 연결하�
 | Claude Code | [claude-code.md](claude-code.md) |
 | ChatGPT (데스크톱 앱) | [chatgpt.md](chatgpt.md) |
 
-화면 사진은 `images/<앱>/`에 있습니다. 사진에서 계정 이름 같은 개인 정보는 가렸습니다.
+화면 사진은 이 폴더의 images 폴더에 앱별로 있습니다. 사진에서 계정 이름 같은 개인 정보는 가렸습니다.

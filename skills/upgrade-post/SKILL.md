@@ -103,7 +103,7 @@ Read the request for how far they want to go.
 | "업그레이드해줘", "업데이트해줘", "최신으로 고쳐줘", "검색 잘 되게", "더 좋게 만들어줘", "update this post", "bring it up to date", "upgrade my post", "make it rank better", a post from the 손볼 글 list | The upgrade (below): understand, talk, add, tidy - in conversation. New facts allowed - only from pages you opened |
 | "이 기사 내용 내 글에 더해줘", "내 글 이 부분 무슨 뜻이야?", "그 글에 이거 넣어줘", "add this to my post", "what does this part mean?", what they tried since | The upgrade, starting where the request does - a question to answer, a source to fold in, their words to put in. Only that |
 | "글 정리해줘", "지저분해진 거 정리해줘", "tidy it up" | Tidy (step 4) only - no fact checks, no briefing |
-| "이 노트 발행해줘", "publish this note" (no changes asked) | Nothing in the body. Run the checks and publish |
+| "이 노트 발행해줘", "publish this note" (no changes asked) | Nothing in the body. Run the checks ("Publish a draft" - one looks for what shouldn't be public) and publish |
 | "이 글에 사진 넣어줘", "캡처 넣고 싶어", "add my photos to this post", a photo attached here | Their own pictures through an upload link, placed where they fit - [references/photos.md](references/photos.md). Nothing else in the body changes. On a published post, show where each goes and apply on a yes |
 
 When unsure between the first rows, take "다듬어줘". When the request names one part
@@ -294,8 +294,17 @@ at its place ([references/upgrade.md](references/upgrade.md) has where each kind
   place, dated, cited; nothing for what the post already says. Keep what was true then
   ("처음엔 무료였는데 2026년 9월부터 유료다", "It was free at first, but since
   September 2026 it costs money.") only when it was once true and the change is
-  worth knowing. From a private note, only what the post needs - no other people's
-  names, contacts, money or health matters.
+  worth knowing. From a private note, only what the post needs - its experience,
+  steps and lessons. Leave out, unless the user puts it in themselves: other people's
+  names (a public figure cited for what they said in public is fine), anyone's email,
+  phone number or address, ID, account or card numbers, the user's own health, money
+  and family matters; secrets - passwords, API keys, tokens, a connection string with
+  a password (a code block you keep gets a placeholder: `DATABASE_URL=...`); internal
+  addresses - a company wiki, an internal server or IP, links to private documents;
+  work matters - the names of their employer, clients or partners, contract terms and
+  amounts, figures and plans not made public (keep what is general: "계약서 같은 긴
+  문서"). Say by kind what you left out, never the value ("서버 주소와 키는 넣지
+  않았어요").
 - **A yes to what you offered** → put in what they agreed to, with the bookkeeping that
   message named, then tidy (4).
 - **"빼줘", "아까 게 나았어"** → take it out, or follow the undo line that `edit_note`
@@ -449,13 +458,29 @@ that kind of writing. Never write to it silently.
 3. Tags: up to five search words.
 4. If you can search and the post has prices, versions or dates that may have moved,
    check them and flag what changed - change only with their OK.
+5. **Nothing that shouldn't be public.** A note they wrote for themselves may be
+   months old, and they may not remember all of it. Read the whole body for:
+   passwords, API keys, tokens or a connection string with a password; email
+   addresses and phone numbers; ID, account or card numbers; a home address; internal
+   addresses (a company wiki, an internal server or IP, links to private documents);
+   another person's name with private details about them; a client's name with
+   contract terms or amounts. Placeholder values in a how-to (`you@example.com`,
+   `localhost:3000`, `sk-...`, `<API_KEY>`) are fine. If something turns up, don't
+   publish yet - even when the request is the yes (below): say in one short message
+   where each one is (the section, in their words) and what kind it is - never the
+   value itself - and offer one fix (a placeholder for a secret, the line taken out
+   for a contact or a private detail). Apply it on a yes with `edit_note`, then
+   publish; "그대로 올려" ("post it as it is") publishes it unchanged - it is their
+   note. If nothing turns up, the reply doesn't mention this check or the
+   placeholder values at all - not even "I checked".
 
 **When to ask "이대로 공개할까요?"** ("Shall I publish it like this?")
 
 - They asked to publish ("다듬어서 올려줘", "이 노트 발행해줘") and you changed little
   (spelling, spacing, phrasing, or cutting filler sentences such as an AI-sounding
   opening or closing recap - nothing rewritten or reordered) → the request is the
-  yes. Publish, then report the changes with the link.
+  yes. Publish, then report the changes with the link - unless check 5 found
+  something: then that message first.
 - You rewrote or added paragraphs, or reordered sections → they haven't seen the new
   wording. Show the change list and ask first.
 - They only asked to polish → don't publish. End with the change list and the link.

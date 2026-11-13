@@ -237,8 +237,14 @@ policy.
 - **AI label:** posts and book chapters the AI drafted carry Tilnote's AI-assisted label
   when published. An upgrade where the AI writes sentences of its own into a post you
   wrote (an answer, what a source adds) adds it too; spelling and wording fixes don't. Once set, the label stays.
+- **Before publishing:** the AI reads the whole post once more. If it finds something
+  that shouldn't be public - a password, key or token, an email address or phone
+  number, an ID or card number, an internal address, or private details about another
+  person or a client - it stops, tells you where and what kind (never the value), and
+  offers a fix. You decide; it is your post.
 - **Deleting:** the AI deletes a note only when you ask for exactly that and confirm.
-  A deleted note can't be brought back. Taking a post down keeps the note.
+  A deleted note goes to Tilnote's trash, and you can restore it from
+  tilnote.io/home/trash for 30 days. Taking a post down keeps the note.
 - **Web search:** when your AI app can search the web, the skills use it to look
   topics up, check facts and gather news for your topics. Search gets only search
   words, such as your topics' keywords - not your notes.
