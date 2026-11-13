@@ -66,7 +66,8 @@ When you can run shell commands on the user's computer (Claude Code, the desktop
 code sessions, Codex) and they point you to the files - a path, a file they dropped in,
 "바탕화면 캡처 폴더의 오늘 것" - upload them yourself instead of handing over the link:
 
-1. Make the link as above, but don't show it.
+1. Make the link as above. The user doesn't need to open it this time, so there is no
+   need to give it to them.
 2. From the result take only two values: `directUpload.url` and the `X-Upload-Token`
    value in `directUpload.headers` (if you see only the result's text, its
    `directUpload:` line has both). Use them only if the url is
