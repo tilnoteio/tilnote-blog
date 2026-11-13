@@ -387,8 +387,12 @@ Show only:
 - when the draft uses a private note other than the idea note (tag `tilnote-idea`),
   which one and where, in one line: "'회의록 요약 프롬프트' 노트의 프롬프트를 '사용법'
   절에 넣었어요."
-- when you put in a company's own pictures, one line saying how many and what they
-  show: "OpenAI 공식 이미지 2장(GIF 만들기 화면, 참고 이미지 화면)을 넣었어요."
+- when you put in a company's own pictures, one line saying how many, what they show,
+  that the source is named and that they can come out - not a question: "OpenAI 공식
+  이미지 2장(GIF 만들기 화면, 참고 이미지 화면)을 출처를 달아 넣었어요. 빼려면
+  말씀하세요." (In English: "I added 2 of OpenAI's own pictures (the GIF maker, the
+  reference image screen), with the source named. Say so if you'd rather leave them
+  out.") On "빼줘", take them out of the note.
 - when you left private notes out (1, step 4), one line naming them, not a question:
   "비공개 노트 '로컬 LLM 설치 메모'에도 이 주제 내용이 있어요. 넣으려면 '그 노트도
   넣어줘'라고 하세요."

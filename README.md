@@ -234,6 +234,8 @@ policy.
   pictures it copies into a post from a page it cites (a company's own screenshot, with
   the source named) are stored on Tilnote's image hosting. Each has a long, unguessable
   address that opens without signing in, even while the post is a private draft.
+  When a draft gets a company's own pictures, the reply tells you how many and what they
+  show; say so and they come out before anything is published.
 - **AI label:** posts and book chapters the AI drafted carry Tilnote's AI-assisted label
   when published. An upgrade where the AI writes sentences of its own into a post you
   wrote (an answer, what a source adds) adds it too; spelling and wording fixes don't. Once set, the label stays.

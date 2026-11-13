@@ -1,7 +1,7 @@
 {
   "name": "tilnote-blog",
   "displayName": "Tilnote Blog",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "description": "Write blog posts together with AI and publish them to your Tilnote blog. Look a topic up and write it in your own words, upgrade posts you already have, turn a post into Threads, X, LinkedIn and KakaoTalk versions, get a researched news briefing on the topics you follow, make a book you want to read - table of contents first, each chapter written when you open it - see what to write next, and keep your writing style in one note. Drafts stay private until you say publish.",
   "author": {
     "name": "Tilnote",
