@@ -203,12 +203,8 @@ publish posts you confirm, read your post statistics, and prepare share links.
 
 One more address, for your own pictures: when you want a photo or screenshot in a post,
 the AI makes a one-hour upload link on tilnote.io (`https://tilnote.io/en/upload#...`) that opens without
-signing in, so don't pass it on. In Claude Code, or another app that can run bash, you
-can instead point the AI at picture files on your computer: it runs the plugin's own
-small script (`skills/write-post/scripts/upload-photo.sh`, the same file in
-upgrade-post), which uploads just those files with curl to
-`https://server.tilnote.io/api/image-upload-links/images` using that link's one-hour
-token, and refuses any other address. The plugin itself sends nothing else: web searches
+signing in, so don't pass it on. You upload the pictures there yourself, in every app;
+the plugin runs no commands on your computer. The plugin itself sends nothing else: web searches
 are your AI app's own (see Privacy), and what Tilnote does with what it receives -
 including the spam check new accounts' posts go through - is in Tilnote's privacy
 policy.
